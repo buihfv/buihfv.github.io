@@ -1,0 +1,11 @@
+# Social links shown under the profile on the home page.
+# Key names follow the jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+# Anything commented out simply does not render.
+
+cv_pdf: /assets/pdf/cv.pdf # the 2-page PDF in assets/pdf/
+email: buihfv@sogang.ac.kr
+github_username: buihfv
+linkedin_username: 영민-조-45a91730a # TODO: LinkedIn > Edit public profile & URL -> change to an English slug (e.g. youngmin-jo), then update this line
+# scholar_userid: # TODO: finish creating the Google Scholar profile, then copy the "user=" value from your profile URL
+# orcid_id: # TODO: register at orcid.org (free, 2 minutes) and paste the iD here
+rss_icon: false # no blog on this site

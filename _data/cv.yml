@@ -1,0 +1,201 @@
+# Web CV, rendered by the al_folio_cv plugin (cv_format: rendercv in _pages/cv.md).
+# This is the DETAILED version — the 2-page PDF is the condensed one.
+# Anything marked TODO_ still needs input.
+
+cv:
+  name: Youngmin Jo
+  label: Undergraduate Researcher · Computational Materials Science
+  email: buihfv@sogang.ac.kr
+  location: Seoul, Republic of Korea
+  image: ""
+  summary: >
+    Undergraduate researcher at the Materials Design and Process Engineering Laboratory,
+    Sogang University, advised by Prof. Heonjae Jeong. First-principles modeling of solid
+    electrolyte interfaces for thermal batteries and of charge localization in amorphous
+    oxide semiconductors. Applying to US mechanical engineering PhD programs for 2027 enrollment.
+
+  social_networks:
+    - network: GitHub
+      username: buihfv
+    - network: LinkedIn
+      username: 영민-조-45a91730a # TODO: change to an English LinkedIn slug and update here
+
+  sections:
+    Education:
+      - institution: Sogang University
+        location: Seoul, Republic of Korea
+        url: https://www.sogang.ac.kr/en/
+        area: Mechanical Engineering
+        studyType: B.S.
+        start_date: 2024-03
+        end_date: 2027-08
+        score: "GPA 3.88 / 4.0"
+        courses: "TODO — the major coursework you want visible, e.g. Thermodynamics, Fluid Mechanics, Solid Mechanics, Heat Transfer, Dynamics & Vibration, Mechatronics, Control Engineering, Numerical Analysis, Materials Science"
+        highlights:
+          - "Summa Cum Laude (expected), pending final semester GPA."
+          - "President's Award & Dean's List with Highest Honors (Top 1%) — Summer 2026, and expected Fall 2026."
+
+    Research Experience:
+      - company: Materials Design and Process Engineering Laboratory, Sogang University
+        position: Undergraduate Researcher
+        location: Seoul, Republic of Korea
+        start_date: 2025-12
+        end_date: present
+        summary: "First-principles modeling of materials for energy and electronic devices, advised by Prof. Heonjae Jeong."
+        highlights:
+          - "**Thermodynamic stability and Li-ion conductivity of doped LLZO solid-electrolyte interfaces** (Jul 2026 – present): evaluating Al-, Ga-, Ta-, and Sr+Ta-doped LLZO at LiSi anode and FeF₃ cathode interfaces for thermal-battery applications; assessing dopant-dependent interfacial phase stability and Li-ion transport at realistic operating conditions (500 °C) from first principles."
+          - "Built a ~350-atom FeF₃/LLZO coherent interface model at ~8.5% lattice mismatch; diagnosed and resolved relaxation failures traced to sheared-supercell geometry, short F–Fe contacts, and vacuum-layer artifacts."
+          - "**Origin of negative photoconductivity in amorphous ZnON** (Feb – Aug 2026): performed first-principles calculations to explain negative photoconductivity in amorphous ZnON; identified charge-localization mechanisms at the valence band maximum and conduction band minimum using AIMD and hybrid DFT."
+          - "Evaluating universal machine-learning interatomic potentials (MACE) as a validated substitute for AIMD on ~600-atom systems across ten dopant variants."
+          - "Maintained VASP workflows on a KISTI supercomputer and a shared GPU server, including job submission, monitoring, and backup automation."
+
+    Publications:
+      - title: Origin of Negative Photoconductivity in Amorphous ZnON
+        authors:
+          - TODO_FIRST_AUTHOR
+          - Youngmin Jo
+          - TODO_REMAINING_AUTHORS
+        publisher: Manuscript in preparation
+        releaseDate: 2026
+        summary: "Working title. Second author. TODO — update with the final author list and target journal once submitted."
+
+    # No conference presentations yet. When you give one, uncomment and duplicate this block:
+    # Presentations:
+    #   - title: TODO_PRESENTATION_TITLE
+    #     authors:
+    #       - Youngmin Jo
+    #       - TODO_COAUTHORS
+    #     publisher: "TODO_CONFERENCE_NAME, TODO_LOCATION (oral / poster)"
+    #     releaseDate: TODO_YYYY-MM-DD
+    #     summary: "TODO"
+
+    Technical Projects:
+      - name: Automated Robotic Arm Teleoperation System
+        summary: "Motion-driven robotic arm capable of real-time teleoperation, built to automate repetitive laboratory experiments and manual tasks."
+        highlights:
+          - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing hard-coded control and making the remote-control path accessible."
+          - "Skills: LeRobot, computer vision, Linux, Autodesk Inventor, 3D printing."
+        start_date: 2026-03
+        end_date: present
+
+      - name: Wildfire Detection Drone
+        summary: "Custom quadcopter that streams live video from an onboard phone camera, detects fire with a YOLO model on a ground station, and releases a water payload over the detected spot."
+        highlights:
+          - "Built streaming, detection, and payload release as independent subsystems, then integrated them; automating alignment and release with a XIAO ESP32C6 running DroneBridge between ground station and flight controller."
+          - "Skills: Python, YOLO, INAV flight control (SpeedyBee F405 WING MINI), ESP32, servo actuation."
+        start_date: TODO_YYYY-MM
+        end_date: present
+
+      - name: Predictive Weather Navigation System
+        summary: "Dynamic route-planning application in C that synchronizes spatial coordinates from a navigation API with temporal data from a meteorological API to predict weather at waypoints along a route."
+        highlights:
+          - "Engineered a data processing pipeline to extract, parse, and integrate raw external datasets into a usable format."
+          - "Skills: C, REST APIs (navigation and weather)."
+        start_date: 2025-08
+        end_date: 2025-12
+
+    Awards and Scholarships:
+      - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        authors:
+          - Sogang University
+        date: 2026-12
+        awarder: Sogang University
+        summary: "Fall 2026 (expected)."
+
+      - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        authors:
+          - Sogang University
+        date: 2026-08
+        awarder: Sogang University
+        summary: "Summer 2026."
+
+      - title: Encouragement Prize, 11th DB GAPS Investment Competition
+        authors:
+          - DB Financial Investment
+        date: 2025-10
+        awarder: DB Financial Investment
+        summary: "National undergraduate investment strategy competition."
+
+      - title: Best Team Award, DS Division
+        authors:
+          - Samsung Electronics
+        date: 2025-08
+        awarder: Samsung Electronics
+        summary: "Device Solutions division team project award."
+
+      - title: Ilju Academy and Culture Foundation Scholarship
+        authors:
+          - Taekwang Group
+        date: 2025-08
+        awarder: Ilju Academy and Culture Foundation, Taekwang Group
+        summary: "Merit scholarship, August 2025 – December 2027 (ongoing)."
+
+      - title: Alumni Association Scholarship
+        authors:
+          - Sogang University Alumni Association
+        date: 2025-03
+        awarder: Sogang University Alumni Association
+
+    Leadership and Activities:
+      - company: Mechanical Engineering Society (MECHA), Sogang University
+        position: President (formerly Vice President, Executive Committee Member)
+        location: Seoul, Republic of Korea
+        start_date: 2024-03
+        end_date: 2027-06
+        summary: "Leading the departmental mechanical engineering student society."
+        highlights:
+          - "Directed member engineering projects across the society's annual programme."
+          - "Managed a technical corporate collaboration with Taejin Technology (HTC KOREA)."
+
+      - company: Samsung Electronics
+        position: Participant, Samsung Shining Star 2025
+        location: Republic of Korea
+        start_date: 2025-08
+        end_date: 2025-08
+        summary: "Intensive training programme on semiconductor memory manufacturing and the 8-step fabrication process."
+
+    Volunteer:
+      - company: Local Children's Center, Bucheon
+        position: English Tutor (Volunteer)
+        location: Bucheon, Republic of Korea
+        start_date: 2025-09
+        end_date: present
+        summary: "Bi-weekly English instruction and academic mentorship for five middle school students."
+        highlights:
+          - "Designed and produced the lesson materials used in each session."
+
+      - company: AIESEC in FHCMC
+        position: Global Volunteer (Exchange Participant)
+        location: Ho Chi Minh City, Vietnam
+        start_date: 2024-12
+        end_date: 2025-02
+        summary: "210 hours of service teaching English to secondary students and facilitating Korean language and cultural exchange sessions for university students."
+
+    Skills:
+      - name: Computational materials design
+        level: Advanced
+        icon: fa-solid fa-atom
+        keywords: "VASP (DFT, AIMD, hybrid functionals, NEB), Gaussian, pymatgen, ASE, VASPKIT, VESTA, Avogadro, MACE (MLIP), softBV / BVSE, Materials Project API"
+      - name: Programming and systems
+        level: Advanced
+        icon: fa-solid fa-code
+        keywords: "Python, C, Linux/Bash, WSL, Git, VS Code (Remote-SSH), HPC job submission and automation (KISTI supercomputer, GPU servers)"
+      - name: Engineering and design
+        level: Intermediate
+        icon: fa-solid fa-compass-drafting
+        keywords: "Autodesk Inventor, AutoCAD, MATLAB, OriginLab, Arduino, ESP32, 3D printing"
+      - name: Laboratory equipment
+        level: Intermediate
+        icon: fa-solid fa-flask
+        keywords: "TODO — list what you have actually operated, e.g. planetary ball mill, glovebox, potentiostat (EC-Lab), XRD sample preparation"
+
+    Languages:
+      - name: Korean
+        summary: "Native"
+      - name: English
+        summary: "Professional working proficiency — TOEFL TODO_SCORE (TODO_DATE)"
+
+    Interests:
+      - name: Research interests
+        icon: fa-solid fa-magnifying-glass-chart
+        keywords: "Solid electrolyte interfaces, thermal and all-solid-state batteries, defect physics in amorphous semiconductors, machine-learning interatomic potentials, high-throughput materials screening"
