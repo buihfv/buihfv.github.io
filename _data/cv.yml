@@ -31,7 +31,6 @@ cv:
         start_date: 2024-03
         end_date: 2027-08
         score: "GPA 4.17 / 4.3 (≈ 3.88 / 4.0)"
-        courses: "Engineering Mathematics I & II, Solid Mechanics, Thermodynamics I, Fluid Mechanics I, Dynamics, Heat Transfer, Automatic Control, Refrigeration & Air Conditioning, Manufacturing Processes, Introduction to Mechanical Engineering Materials, Introduction to Composite Materials, Machine Shop Practice, CAD, Introduction to Engineering Design, Linear Algebra, Calculus I & II, General Physics I & II (+ labs), General Chemistry I, C/C++ Programming, Introduction to AI Programming, Research Project II"
         highlights:
           - "Summa Cum Laude (expected), pending final semester GPA."
           - "President's Award & Dean's List with Highest Honors (Top 1%) — Summer 2026, and expected Fall 2026."
@@ -185,6 +184,65 @@ cv:
         start_date: 2024-12
         end_date: 2025-02
         summary: "210 hours of service teaching English to secondary students and facilitating Korean language and cultural exchange sessions for university students."
+
+    Coursework:
+      - period: "2027 Spring"
+        status: "planned"
+        courses:
+          - Capstone Design
+          - Physical Electronics II
+          - MEMS Design and Fabrication
+          - Continuum Mechanics
+          - Semiconductor Engineering
+
+      - period: "2026 Fall"
+        status: "ongoing"
+        courses:
+          - Design of Experiments and Statistical Analysis
+          - Physical Electronics I
+          - Numerical Analysis
+          - Design Methodology
+          - Mechanical Engineering Laboratory I
+          - Mechatronics
+
+      - period: "2026 Spring"
+        courses:
+          - Manufacturing Processes
+          - Automatic Control
+          - Heat Transfer
+          - Refrigeration and Air Conditioning
+          - Introduction to Composite Materials
+          - Research Project II
+
+      - period: "2025 Fall"
+        courses:
+          - Engineering Mathematics II
+          - Fluid Mechanics I
+          - Dynamics
+          - Fundamentals of Mechanical Materials
+          - Linear Algebra
+          - Introduction to C Programming
+
+      - period: "2025 Spring"
+        courses:
+          - Engineering Mathematics I
+          - Solid Mechanics
+          - Thermodynamics I
+          - Machine Shop Practice
+          - Computer-Aided Design
+
+      - period: "2024 Fall"
+        courses:
+          - Introduction to Engineering Design
+          - General Physics II (+ lab)
+          - Calculus II
+
+      - period: "2024 Spring"
+        courses:
+          - General Chemistry I
+          - Introduction to AI Programming
+          - General Physics I (+ lab)
+          - Calculus I
 
     Skills:
       - name: Computational materials design

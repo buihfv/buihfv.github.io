@@ -300,6 +300,8 @@ footer.sticky-bottom {
 .about-page .masthead-icons .cv-mark {
   font-size: 0.78rem;
   font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.03em;
 }
 
 .about-page .masthead-vitae {
@@ -444,6 +446,108 @@ footer.sticky-bottom {
   padding-top: 0.05rem;
 }
 
+/* ---------- section nav (replaces the gem's left sidebar TOC) ----------
+   Narrow/medium screens: a bar that sticks under the navbar, so it stays
+   reachable no matter how far down the page you are.
+   Wide screens: the same markup becomes a vertical rail parked in the left
+   page margin, so it costs the content no width at all.                    */
+
+.section-jump {
+  position: sticky;
+  top: 57px;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.1rem;
+  margin: 1.3rem 0 0.6rem;
+  padding: 0.5rem 0;
+  background: var(--global-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+  border-bottom: 1px solid var(--global-divider-color);
+  font-size: 0.9rem;
+}
+
+.section-jump a {
+  color: var(--global-text-color-light);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.section-jump a:hover {
+  color: $wine;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.section-jump a.is-active {
+  color: $wine;
+  font-weight: 700;
+}
+
+/* anchors clear the fixed navbar and the sticky bar */
+.research-block,
+.cv-section {
+  scroll-margin-top: 120px;
+}
+
+@media (min-width: 1400px) {
+  .section-jump {
+    position: fixed;
+    top: 130px;
+    left: calc((100vw - 1000px) / 2 - 196px);
+    width: 176px;
+    max-height: 70vh;
+    overflow-y: auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.1rem 0 0.1rem 0.85rem;
+    background: transparent;
+    border: none;
+    border-left: 2px solid var(--global-divider-color);
+    line-height: 1.35;
+  }
+
+  .section-jump a.is-active {
+    box-shadow: -0.85rem 0 0 -0.79rem $wine;
+  }
+
+  .research-block,
+  .cv-section {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* ---------- CV coursework ---------- */
+
+.cv-page .cv-status {
+  display: block;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: $wine;
+}
+
+.cv-page .cv-courses-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.cv-page .cv-courses-list li {
+  font-size: 0.97rem;
+  line-height: 1.5;
+  margin-bottom: 0.15rem;
+  break-inside: avoid;
+}
+
+@media (max-width: 620px) {
+  .cv-page .cv-courses-list {
+    columns: 1;
+  }
+}
+
 /* ---------- research page blocks ---------- */
 
 .research-block {
@@ -457,8 +561,21 @@ footer.sticky-bottom {
 }
 
 .research-block .research-figure {
-  flex: 0 0 220px;
+  flex: 0 0 288px;
   max-width: 100%;
+}
+
+.research-block .figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.research-block .figure-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--global-divider-color);
 }
 
 .research-block .research-body {
@@ -657,6 +774,10 @@ footer.sticky-bottom {
 
   .about-page .about-figure {
     max-width: 260px;
+  }
+
+  .research-block .research-figure {
+    flex: 1 1 100%;
   }
 
   .cv-page .cv-entry,

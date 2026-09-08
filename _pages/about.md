@@ -11,19 +11,19 @@ profile:
     - Sogang University
   email: buihfv@sogang.ac.kr
   vitae:
-    - title: "Undergraduate Researcher (2025 – )"
+    - title: "Undergraduate Researcher (2025.12 – )"
       icon: fa-solid fa-flask
       lines:
         - "Materials Design and Process Engineering Laboratory"
         - "Advisor: <em>Prof. Heonjae Jeong</em>"
-    - title: "B.S. in Mechanical Engineering (2024 – 2027)"
+        - 'Lab website: <a href="https://mdpel.sogang.ac.kr/" target="_blank" rel="noopener noreferrer">mdpel.sogang.ac.kr</a>'
+    - title: "B.S. in Mechanical Engineering (2024.03 – 2027.08)"
       icon: fa-solid fa-graduation-cap
       lines:
         - "Sogang University, <em>Republic of Korea</em>"
-        - "GPA 4.17 / 4.3 · Summa Cum Laude (expected)"
 
 feature:
-  # image: research_llzo_interface.jpg   # assets/img/ 안의 파일명. 넣으면 소개글 왼쪽에 표시됨
+  image: feature_placeholder.jpg # assets/img/ 안의 파일명 — 실제 그림으로 교체하면 됨
   caption: "FeF₃/LLZO interface model"
 
 selected_papers: false # turn on once _bibliography/papers.bib has entries marked selected={true}

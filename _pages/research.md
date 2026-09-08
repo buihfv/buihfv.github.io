@@ -5,15 +5,24 @@ title: Research
 description: First-principles answers to why materials fail — at interfaces, and in the dark.
 nav: true
 nav_order: 2
-toc:
-  sidebar: left
 ---
 
 I work on problems where the behaviour of a device is decided by something too small and too buried to measure directly: a solid–solid interface a few atomic layers thick, or a localized electronic state in a disordered oxide. My tools are density functional theory, ab initio molecular dynamics and hybrid functionals, run at a scale that keeps the model physically honest rather than merely tractable. What I care about is the last step — turning a converged calculation into a statement a process or device engineer can act on: use this dopant, expect this failure mode, avoid this operating window.
 
-<div class="research-block">
+<nav class="section-jump" aria-label="Research topics">
+  <a href="#dopant">Doped LLZO interfaces</a>
+  <a href="#znon">Negative photoconductivity</a>
+  <a href="#mlip">MLIP-accelerated screening</a>
+</nav>
+
+<div class="research-block" id="dopant">
   <div class="research-figure">
-    {% include figure.liquid loading="eager" path="assets/img/research_llzo_interface.jpg" title="Doped LLZO interfaces with LiSi and FeF3" class="img-fluid" %}
+    <div class="figure-grid">
+      {% include figure.liquid loading="eager" path="assets/img/fig_llzo_1.jpg" title="LLZO interface model" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_llzo_2.jpg" title="Dopant configurations" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_llzo_3.jpg" title="NEB migration path" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_llzo_4.jpg" title="Interfacial reaction energies" class="img-fluid" %}
+    </div>
   </div>
   <div class="research-body" markdown="1">
 
@@ -30,9 +39,14 @@ The Sr+Ta co-doped composition is the case the work turns on: whether a second, 
   </div>
 </div>
 
-<div class="research-block">
+<div class="research-block" id="znon">
   <div class="research-figure">
-    {% include figure.liquid loading="eager" path="assets/img/research_znon.jpg" title="Charge localization in amorphous ZnON" class="img-fluid" %}
+    <div class="figure-grid">
+      {% include figure.liquid loading="lazy" path="assets/img/fig_znon_1.jpg" title="Amorphous ZnON model" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_znon_2.jpg" title="Density of states" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_znon_3.jpg" title="Charge localization at the VBM" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_znon_4.jpg" title="Charge localization at the CBM" class="img-fluid" %}
+    </div>
   </div>
   <div class="research-body" markdown="1">
 
@@ -49,9 +63,14 @@ The picture that emerges ties the anomaly to the disorder itself rather than to 
   </div>
 </div>
 
-<div class="research-block">
+<div class="research-block" id="mlip">
   <div class="research-figure">
-    {% include figure.liquid loading="eager" path="assets/img/research_mlip.jpg" title="MLIP-accelerated molecular dynamics" class="img-fluid" %}
+    <div class="figure-grid">
+      {% include figure.liquid loading="lazy" path="assets/img/fig_mlip_1.jpg" title="MLIP vs AIMD trajectories" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_mlip_2.jpg" title="Mean squared displacement" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_mlip_3.jpg" title="Arrhenius comparison" class="img-fluid" %}
+      {% include figure.liquid loading="lazy" path="assets/img/fig_mlip_4.jpg" title="Force error against DFT" class="img-fluid" %}
+    </div>
   </div>
   <div class="research-body" markdown="1">
 
@@ -67,3 +86,5 @@ The goal is a workflow where a screening campaign that would take months of AIMD
 
   </div>
 </div>
+
+{% include section_jump.liquid %}

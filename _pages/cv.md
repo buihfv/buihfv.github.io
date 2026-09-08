@@ -5,8 +5,6 @@ title: CV
 nav: true
 nav_order: 4
 description: Full curriculum vitae. The PDF is the condensed two-page version.
-toc:
-  sidebar: left
 ---
 
 {% assign cv = site.data.cv.cv %}
@@ -23,12 +21,17 @@ toc:
     </p>
   </div>
 
+<nav class="section-jump" aria-label="CV sections">
+{% assign all_sections = "Education,Coursework,Experience,Publications,Projects,Awards,Volunteer,Skills,Languages,Interests" | split: "," %}
+{% for name in all_sections %}{% if cv.sections[name] %}<a href="#{{ name | downcase }}">{{ name }}</a>{% endif %}{% endfor %}
+</nav>
+
 {% assign entry_sections = "Education,Experience,Publications,Projects,Awards,Volunteer" | split: "," %}
 {% for name in entry_sections %}
 {% assign entries = cv.sections[name] %}
 {% if entries %}
 
-<section class="cv-section">
+<section class="cv-section" id="{{ name | downcase }}">
 <h2>{{ name }}</h2>
 {% for e in entries %}
 <div class="cv-entry">
@@ -68,12 +71,31 @@ toc:
 {% endif %}
 {% endfor %}
 
+{% assign coursework = cv.sections.Coursework %}
+{% if coursework %}
+
+<section class="cv-section" id="coursework">
+<h2>Coursework</h2>
+{% for term in coursework %}
+<div class="cv-entry">
+<div class="cv-period">{{ term.period }}{% if term.status %}<span class="cv-status">{{ term.status }}</span>{% endif %}</div>
+<div class="cv-detail">
+<ul class="cv-courses-list">
+{% for c in term.courses %}<li>{{ c }}</li>{% endfor %}
+</ul>
+</div>
+</div>
+{% endfor %}
+</section>
+
+{% endif %}
+
 {% assign label_sections = "Skills,Languages,Interests" | split: "," %}
 {% for name in label_sections %}
 {% assign entries = cv.sections[name] %}
 {% if entries %}
 
-<section class="cv-section">
+<section class="cv-section" id="{{ name | downcase }}">
 <h2>{{ name }}</h2>
 {% for e in entries %}
 <div class="cv-labelrow">
@@ -86,3 +108,5 @@ toc:
 {% endfor %}
 
 </div>
+
+{% include section_jump.liquid %}
