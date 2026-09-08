@@ -1,0 +1,107 @@
+---
+layout: default
+---
+{% comment %}
+  Local override of al_folio_core's about layout.
+  Adds the two-column masthead (portrait | identity + affiliations) used on this site.
+  All of its content comes from the `profile:` block in _pages/about.md — edit there, not here.
+{% endcomment %}
+<div class="post about-page">
+  <article>
+    <div class="masthead">
+      {% if page.profile and page.profile.image %}
+        <div class="masthead-portrait">
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% include figure.liquid loading="eager" path=profile_image_path class="img-fluid" alt=site.first_name cache_bust=true %}
+        </div>
+      {% endif %}
+
+      <div class="masthead-details">
+        <h1 class="masthead-name">
+          {% if site.title == 'blank' %}
+            {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
+          {% else %}
+            {{ site.title }}
+          {% endif %}
+        </h1>
+
+        {% if page.profile.affiliation %}
+          <p class="masthead-affil">
+            {% for line in page.profile.affiliation %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}
+          </p>
+        {% endif %}
+
+        {% if page.profile.email %}
+          <p class="masthead-mail"><a href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a></p>
+        {% endif %}
+
+        <div class="masthead-icons">
+          {% if page.profile.email %}
+            <a href="mailto:{{ page.profile.email }}" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          {% endif %}
+          {% if site.data.socials.scholar_userid %}
+            <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
+          {% endif %}
+          {% if site.data.socials.github_username %}
+            <a href="https://github.com/{{ site.data.socials.github_username }}" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+          {% endif %}
+          {% if site.data.socials.linkedin_username %}
+            <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+          {% endif %}
+          {% if site.data.socials.cv_pdf %}
+            <a href="{{ site.data.socials.cv_pdf | relative_url }}" title="Curriculum vitae" aria-label="Curriculum vitae" target="_blank" rel="noopener noreferrer"><span class="cv-mark">CV</span></a>
+          {% endif %}
+        </div>
+
+        {% if page.profile.vitae %}
+          <div class="masthead-vitae">
+            {% for entry in page.profile.vitae %}
+              <div class="vitae-row">
+                <i class="{% if entry.icon %}{{ entry.icon }}{% else %}fa-solid fa-graduation-cap{% endif %}" aria-hidden="true"></i>
+                <div>
+                  <p class="vitae-title">{{ entry.title }}</p>
+                  {% if entry.lines %}
+                    <p class="vitae-sub">
+                      {% for line in entry.lines %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}
+                    </p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="about-body">{{ content }}</div>
+
+    {% if page.announcements and page.announcements.enabled %}
+      <h2 class="about-section">News</h2>
+      <div class="newsfeed">
+        {% assign news = site.news | sort: 'date' | reverse %}
+        {% if page.announcements.limit %}
+          {% assign news_limit = page.announcements.limit %}
+        {% else %}
+          {% assign news_limit = news | size %}
+        {% endif %}
+        {% for item in news limit: news_limit %}
+          <div class="newsfeed-item">
+            <span class="newsfeed-date">{{ item.date | date: '%m/%Y' }}</span>
+            <span class="newsfeed-text">
+              {% if item.inline %}
+                {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+              {% else %}
+                <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% endif %}
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if page.selected_papers %}
+      <h2 class="about-section">Selected publications</h2>
+      {% include selected_papers.liquid %}
+    {% endif %}
+  </article>
+</div>

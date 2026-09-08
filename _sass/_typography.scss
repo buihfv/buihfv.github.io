@@ -1,0 +1,474 @@
+/*******************************************************************************
+ * Typography styles: Headings, text, links, tables, blockquotes
+ ******************************************************************************/
+
+@use "variables" as v;
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+div,
+li,
+span,
+strong {
+  color: var(--global-text-color);
+}
+
+hr {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+table:not(.table) {
+  td,
+  th {
+    font-size: 1rem;
+    padding: 0.45rem 1rem 0.45rem 0;
+    border-top: 1px solid var(--global-divider-color);
+  }
+
+  th {
+    font-weight: 600;
+  }
+}
+
+a,
+table.table a {
+  color: var(--global-theme-color);
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: underline;
+  }
+
+  &:hover:after :not(.nav-item.dropdown) {
+    width: 100%;
+  }
+}
+
+.table-dark {
+  background-color: transparent;
+  &.table-bordered {
+    border: 1px solid var(--global-divider-color) !important;
+  }
+}
+
+blockquote {
+  background: var(--global-bg-color);
+  border-left: 5px solid var(--global-theme-color);
+  margin: 1.5em 0;
+  padding: 1em;
+  font-size: 1.2rem;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  /* Tips, warnings, and dangers blockquotes */
+  &.block-tip {
+    border-color: var(--global-tip-block);
+    background-color: var(--global-tip-block-bg);
+
+    em,
+    li,
+    p,
+    strong {
+      color: var(--global-tip-block-text);
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-tip-block-title);
+    }
+  }
+
+  &.block-warning {
+    border-color: var(--global-warning-block);
+    background-color: var(--global-warning-block-bg);
+
+    em,
+    li,
+    p,
+    strong {
+      color: var(--global-warning-block-text);
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-warning-block-title);
+    }
+  }
+
+  &.block-danger {
+    border-color: var(--global-danger-block);
+    background-color: var(--global-danger-block-bg);
+
+    em,
+    li,
+    p,
+    strong {
+      color: var(--global-danger-block-text);
+    }
+
+    a,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--global-danger-block-title);
+    }
+  }
+}
+
+/*******************************************************************************
+ * LOCAL OVERRIDES — Youngmin Jo
+ * Everything below this line is site-specific and is NOT part of al_folio_core.
+ * (The rest of this file is a verbatim copy of the gem's _typography.scss;
+ *  keeping it means this file shadows the gem's version cleanly.)
+ ******************************************************************************/
+
+$serif-stack: "Times New Roman", Times, "Liberation Serif", "Nimbus Roman", "Tinos", serif;
+
+html body,
+html body p,
+html body li,
+html body span,
+html body strong,
+html body em,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h5,
+html body h6,
+html body a,
+html body th,
+html body td,
+html body .navbar,
+html body .nav-link,
+html body .navbar-brand,
+html body .footer,
+html body button,
+html body input {
+  font-family: $serif-stack;
+}
+
+html body {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+html body h1,
+html body h2,
+html body h3,
+html body h4 {
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+/* ---------- wine navigation bar ---------- */
+
+nav#navbar.navbar {
+  background: var(--global-theme-color);
+  border-bottom: none;
+  box-shadow: none;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+
+  .navbar-brand,
+  .nav-link,
+  #search-toggle .nav-link,
+  #light-toggle {
+    color: #ffffff;
+  }
+
+  .navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .navbar-brand span.font-weight-bold {
+    font-weight: 700;
+  }
+
+  .nav-link {
+    font-size: 1.12rem;
+    opacity: 0.85;
+  }
+
+  .nav-item.active .nav-link,
+  .nav-link:hover {
+    opacity: 1;
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+
+  .navbar-toggler .icon-bar {
+    background-color: #ffffff;
+  }
+}
+
+/* ---------- home masthead ---------- */
+
+.about-page .masthead {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: start;
+  margin-top: 1.6rem;
+}
+
+.about-page .masthead-portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--global-divider-color);
+}
+
+.about-page .masthead-name {
+  font-size: 2rem;
+  margin: 0 0 0.7rem;
+}
+
+.about-page .masthead-affil {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.about-page .masthead-mail {
+  margin: 0.3rem 0 0;
+  font-size: 1.1rem;
+}
+
+.about-page .masthead-icons {
+  display: flex;
+  gap: 0.65rem;
+  margin: 1.05rem 0 0;
+}
+
+.about-page .masthead-icons a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2f2f2f;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.about-page .masthead-icons a:hover {
+  background: var(--global-theme-color);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.about-page .masthead-icons .cv-mark {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.about-page .masthead-vitae {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.about-page .vitae-row {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 0.6rem;
+}
+
+.about-page .vitae-row i {
+  margin-top: 0.28rem;
+  color: var(--global-text-color);
+  font-size: 0.95rem;
+}
+
+.about-page .vitae-title {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.about-page .vitae-sub {
+  margin: 0.18rem 0 0;
+  font-size: 0.95rem;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- body copy ---------- */
+
+.about-page .about-body {
+  margin-top: 2.1rem;
+  max-width: 74ch;
+}
+
+.about-page .about-body p {
+  font-size: 1.1rem;
+  line-height: 1.72;
+}
+
+.about-page .about-body ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.about-page .about-body ul li {
+  position: relative;
+  padding: 0.15rem 0 0.15rem 1.2rem;
+  font-size: 1.1rem;
+}
+
+.about-page .about-body ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--global-theme-color);
+}
+
+.about-page h2,
+.about-page .about-section {
+  font-size: 1.35rem;
+  color: var(--global-theme-color);
+  margin: 2.1rem 0 0.75rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+/* ---------- news ---------- */
+
+.about-page .newsfeed {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.about-page .newsfeed-item {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: baseline;
+  font-size: 1.02rem;
+}
+
+.about-page .newsfeed-date {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ---------- research page blocks ---------- */
+
+.research-block {
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 1.5rem;
+  margin-top: 1.9rem;
+  display: flex;
+  gap: 1.7rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.research-block .research-figure {
+  flex: 0 0 220px;
+  max-width: 100%;
+}
+
+.research-block .research-body {
+  flex: 1 1 320px;
+  min-width: 260px;
+}
+
+.research-block h2 {
+  font-size: 1.45rem;
+  font-weight: 400;
+  margin: 0 0 0.6rem;
+  line-height: 1.25;
+  border: none;
+  padding: 0;
+  color: var(--global-text-color);
+}
+
+.research-block p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.research-keywords {
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+}
+
+.research-keywords strong {
+  color: var(--global-theme-color);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- project cards ---------- */
+
+.projects .card {
+  box-shadow: none;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0;
+}
+
+.projects .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.projects .card-text {
+  font-size: 0.98rem;
+  color: var(--global-text-color-light);
+}
+
+/* ---------- cv page ---------- */
+
+.cv .card,
+#cv .card {
+  box-shadow: none;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0;
+}
+
+/* ---------- narrow screens ---------- */
+
+@media (max-width: 700px) {
+  .about-page .masthead {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .about-page .masthead-portrait {
+    max-width: 220px;
+  }
+
+  .about-page .newsfeed-item {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}

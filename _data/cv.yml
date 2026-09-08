@@ -29,13 +29,13 @@ cv:
         studyType: B.S.
         start_date: 2024-03
         end_date: 2027-08
-        score: "GPA 3.88 / 4.0"
-        courses: "TODO — the major coursework you want visible, e.g. Thermodynamics, Fluid Mechanics, Solid Mechanics, Heat Transfer, Dynamics & Vibration, Mechatronics, Control Engineering, Numerical Analysis, Materials Science"
+        score: "GPA 4.17 / 4.3 (≈ 3.88 / 4.0)"
+        courses: "Engineering Mathematics I & II, Solid Mechanics, Thermodynamics I, Fluid Mechanics I, Dynamics, Heat Transfer, Automatic Control, Refrigeration & Air Conditioning, Manufacturing Processes, Introduction to Mechanical Engineering Materials, Introduction to Composite Materials, Machine Shop Practice, CAD, Introduction to Engineering Design, Linear Algebra, Calculus I & II, General Physics I & II (+ labs), General Chemistry I, C/C++ Programming, Introduction to AI Programming, Research Project II"
         highlights:
           - "Summa Cum Laude (expected), pending final semester GPA."
           - "President's Award & Dean's List with Highest Honors (Top 1%) — Summer 2026, and expected Fall 2026."
 
-    Research Experience:
+    Experience:
       - company: Materials Design and Process Engineering Laboratory, Sogang University
         position: Undergraduate Researcher
         location: Seoul, Republic of Korea
@@ -48,6 +48,23 @@ cv:
           - "**Origin of negative photoconductivity in amorphous ZnON** (Feb – Aug 2026): performed first-principles calculations to explain negative photoconductivity in amorphous ZnON; identified charge-localization mechanisms at the valence band maximum and conduction band minimum using AIMD and hybrid DFT."
           - "Evaluating universal machine-learning interatomic potentials (MACE) as a validated substitute for AIMD on ~600-atom systems across ten dopant variants."
           - "Maintained VASP workflows on a KISTI supercomputer and a shared GPU server, including job submission, monitoring, and backup automation."
+
+      - company: Mechanical Engineering Society (MECHA), Sogang University
+        position: President (formerly Vice President, Executive Committee Member)
+        location: Seoul, Republic of Korea
+        start_date: 2024-03
+        end_date: 2027-06
+        summary: "Leading the departmental mechanical engineering student society."
+        highlights:
+          - "Directed member engineering projects across the society's annual programme."
+          - "Managed a technical corporate collaboration with Taejin Technology (HTC KOREA)."
+
+      - company: Samsung Electronics
+        position: Participant, Samsung Shining Star 2025
+        location: Republic of Korea
+        start_date: 2025-08
+        end_date: 2025-08
+        summary: "Intensive training programme on semiconductor memory manufacturing and the 8-step fabrication process."
 
     Publications:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON
@@ -69,7 +86,7 @@ cv:
     #     releaseDate: TODO_YYYY-MM-DD
     #     summary: "TODO"
 
-    Technical Projects:
+    Projects:
       - name: Automated Robotic Arm Teleoperation System
         summary: "Motion-driven robotic arm capable of real-time teleoperation, built to automate repetitive laboratory experiments and manual tasks."
         highlights:
@@ -94,7 +111,7 @@ cv:
         start_date: 2025-08
         end_date: 2025-12
 
-    Awards and Scholarships:
+    Awards:
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
         authors:
           - Sogang University
@@ -135,24 +152,6 @@ cv:
           - Sogang University Alumni Association
         date: 2025-03
         awarder: Sogang University Alumni Association
-
-    Leadership and Activities:
-      - company: Mechanical Engineering Society (MECHA), Sogang University
-        position: President (formerly Vice President, Executive Committee Member)
-        location: Seoul, Republic of Korea
-        start_date: 2024-03
-        end_date: 2027-06
-        summary: "Leading the departmental mechanical engineering student society."
-        highlights:
-          - "Directed member engineering projects across the society's annual programme."
-          - "Managed a technical corporate collaboration with Taejin Technology (HTC KOREA)."
-
-      - company: Samsung Electronics
-        position: Participant, Samsung Shining Star 2025
-        location: Republic of Korea
-        start_date: 2025-08
-        end_date: 2025-08
-        summary: "Intensive training programme on semiconductor memory manufacturing and the 8-step fabrication process."
 
     Volunteer:
       - company: Local Children's Center, Bucheon
