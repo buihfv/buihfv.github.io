@@ -1,51 +1,53 @@
+# 사이트 메모
 
-
-## 2. GitHub 리포 만들고 올리기
-
-`buihfv/buihfv.github.io` 리포가 아직 없어. GitHub에서 **빈 리포**로 새로 만든 다음:
-
+## 배포
 ```powershell
 cd "$HOME\Desktop\github.io"
-git init -b main
 git add -A
-git commit -m "Initial commit: al-folio personal site"
-git remote add origin https://github.com/buihfv/buihfv.github.io.git
-git push -u origin main
+git commit -m "메시지"
+git push
 ```
+push → Actions "Deploy site" → gh-pages → https://buihfv.github.io/ (2~3분)
 
-그다음 리포 **Settings → Pages → Source: Deploy from a branch → `gh-pages` / `(root)`**.
-`.github/workflows/deploy.yml`이 push마다 빌드해서 `gh-pages` 브랜치로 올려줌.
-(템플릿 유지보수용 워크플로 20여 개는 미리 지워놨고 `deploy.yml`만 남겼음.)
-
-## 3. 로컬 미리보기
-
+## 로컬 미리보기 (선택)
+Ruby+Devkit 3.3 / ImageMagick 설치 후:
 ```powershell
+gem install bundler -v 4.0.6
 bundle install
-bundle exec jekyll serve
-# http://localhost:4000
+bundle exec jekyll serve   # http://localhost:4000
 ```
 
-## 4. 아직 채울 것
+## 이 사이트가 gem 기본값을 덮어쓰는 파일 (local overrides)
+al-folio v1.x는 thin starter라 레이아웃·스타일이 전부 gem에 있음.
+아래 4개는 gem 원본을 복사해서 수정한 것이라, **테마 업데이트가 이 파일들은 안 건드림.**
+`bundle exec al-folio upgrade overrides audit`로 원본과의 차이를 확인할 수 있음.
 
-```powershell
-Select-String -Path _config.yml,_data\*.yml,_pages\*.md,_projects\*.md -Pattern "TODO_"
-```
+| 파일 | 원본 대비 바뀐 것 |
+|---|---|
+| `_layouts/about.liquid` | 홈 2단 마스트헤드(사진 \| 이름·연락처·아이콘·학력) + News 포맷을 MM/YYYY로 |
+| `_includes/header.liquid` | 홈에서도 네비바에 이름이 나오도록 브랜드 조건 해제 (한 줄) |
+| `_sass/_variables.scss` | `$purple-color` → 와인 `#7a2e2e`, `$cyan-color` → `#c98a8a`, 본문 폭 1000px |
+| `_sass/_typography.scss` | 원본 그대로 + 파일 하단에 이 사이트 전용 CSS (Times New Roman, 와인 네비바, 마스트헤드, News, Research 블록, 카드) |
 
-- `_data/socials.yml` — Google Scholar 프로필 만들고 `user=` 값, LinkedIn 영문 slug, ORCID
-- `_data/cv.yml` — 전공 과목, ZnON 논문 저자 목록, 실험 장비, TOEFL 점수, 드론 프로젝트 시작 시점
-- `_projects/1_robot_arm.md`, `_projects/2_wildfire_drone.md` — 역할/팀 규모/GitHub·데모 링크/결과 수치
-- 이미지 교체 (지금은 전부 템플릿 샘플 사진):
-  - `assets/img/prof_pic.jpg` — 정방형 프로필 사진
-  - `assets/img/research_llzo_interface.jpg`, `research_znon.jpg`, `research_mlip.jpg`
-  - `assets/img/project_robot_arm.jpg`, `project_wildfire_drone.jpg`
-- `assets/pdf/cv.pdf` — 지금은 템플릿 샘플 PDF. CV_v7.docx를 PDF로 내보내서 덮어쓰기
+## 디자인 결정
+- 폰트: Times New Roman (폴백 Times / Liberation Serif / Nimbus Roman / Tinos)
+- 액센트: 와인 `#7a2e2e` — 네비바 배경, 섹션 제목, 링크
+- 다크모드 **끔** (`enable_darkmode: false`) — 라이트 단일 테마로 확정
+- `footer_fixed: false` — 하단 고정 푸터가 본문을 가려서 해제
+- 프로필 사진은 원본 비율 유지 (정사각 크롭 안 함)
 
-## 5. 구조 메모 (al-folio v1.x)
+## 홈 내용 고치는 법
+전부 `_pages/about.md` 프론트매터에서:
+- `profile.affiliation` — 사진 오른쪽 소속 3줄
+- `profile.email` — 이메일 + 메일 아이콘
+- `profile.vitae` — 연구생/학사 블록. 항목 추가하면 그대로 늘어남 (`icon`은 Font Awesome 클래스)
+- `announcements.limit` — News 표시 개수
+News 항목은 `_news/announcement_*.md`, `inline: true`로 한 줄씩.
 
-- thin starter라서 layouts/includes/Sass는 전부 gem(`al_folio_core`, `al_folio_cv` 등)에 있음. 리포엔 없음.
-- 소셜 링크는 `_config.yml`이 아니라 **`_data/socials.yml`** (jekyll-socials).
-- 웹 CV는 `_data/cv.yml`의 **rendercv 포맷** (`cv: name/label/sections`).
-- `Gemfile`과 `_config.yml`의 plugins 목록은 둘 다 맞아야 동작함. 한쪽만 있으면 조용히 무시됨.
-- `_data/cv.yml`에 `Research Experience` / `Technical Projects` / `Awards and Scholarships` /
-  `Leadership and Activities` 같은 커스텀 섹션명을 썼음. rendercv는 필드 모양으로 타입을 추론하니
-  정상 렌더될 것으로 보이는데, 첫 빌드 때 CV 페이지 한 번 확인해줘.
+## 남은 TODO
+`Select-String -Path _data\*.yml,_projects\*.md -Pattern "TODO_"`
+- `_data/cv.yml` — ZnON 논문 저자 목록, 실험 장비, TOEFL 점수/응시일, 드론 프로젝트 시작 시점
+- `_projects/*.md` — 역할, 팀 규모, GitHub·데모 링크, 결과 수치
+- 이미지 5장: `assets/img/research_llzo_interface.jpg`, `research_znon.jpg`, `research_mlip.jpg`, `project_robot_arm.jpg`, `project_wildfire_drone.jpg` (지금 전부 템플릿 샘플 사진)
+- Google Scholar 프로필 만들고 `_data/socials.yml`의 `scholar_userid` 주석 해제
+- LinkedIn 공개 URL을 영문 slug로 변경 후 `_data/socials.yml` 갱신
