@@ -23,6 +23,7 @@ cv:
   sections:
     Education:
       - institution: Sogang University
+        period: "24.03 – 27.08"
         location: Seoul, Republic of Korea
         url: https://www.sogang.ac.kr/en/
         area: Mechanical Engineering
@@ -37,6 +38,7 @@ cv:
 
     Experience:
       - company: Materials Design and Process Engineering Laboratory, Sogang University
+        period: "25.12 – present"
         position: Undergraduate Researcher
         location: Seoul, Republic of Korea
         start_date: 2025-12
@@ -50,6 +52,7 @@ cv:
           - "Maintained VASP workflows on a KISTI supercomputer and a shared GPU server, including job submission, monitoring, and backup automation."
 
       - company: Mechanical Engineering Society (MECHA), Sogang University
+        period: "24.03 – 27.06"
         position: President (formerly Vice President, Executive Committee Member)
         location: Seoul, Republic of Korea
         start_date: 2024-03
@@ -60,6 +63,7 @@ cv:
           - "Managed a technical corporate collaboration with Taejin Technology (HTC KOREA)."
 
       - company: Samsung Electronics
+        period: "25.08"
         position: Participant, Samsung Shining Star 2025
         location: Republic of Korea
         start_date: 2025-08
@@ -68,6 +72,7 @@ cv:
 
     Publications:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON
+        period: "2026"
         authors:
           - TODO_FIRST_AUTHOR
           - Youngmin Jo
@@ -88,6 +93,7 @@ cv:
 
     Projects:
       - name: Automated Robotic Arm Teleoperation System
+        period: "26.03 – present"
         summary: "Motion-driven robotic arm capable of real-time teleoperation, built to automate repetitive laboratory experiments and manual tasks."
         highlights:
           - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing hard-coded control and making the remote-control path accessible."
@@ -96,6 +102,7 @@ cv:
         end_date: present
 
       - name: Wildfire Detection Drone
+        period: "TODO – present"
         summary: "Custom quadcopter that streams live video from an onboard phone camera, detects fire with a YOLO model on a ground station, and releases a water payload over the detected spot."
         highlights:
           - "Built streaming, detection, and payload release as independent subsystems, then integrated them; automating alignment and release with a XIAO ESP32C6 running DroneBridge between ground station and flight controller."
@@ -104,6 +111,7 @@ cv:
         end_date: present
 
       - name: Predictive Weather Navigation System
+        period: "25.08 – 25.12"
         summary: "Dynamic route-planning application in C that synchronizes spatial coordinates from a navigation API with temporal data from a meteorological API to predict weather at waypoints along a route."
         highlights:
           - "Engineered a data processing pipeline to extract, parse, and integrate raw external datasets into a usable format."
@@ -113,6 +121,7 @@ cv:
 
     Awards:
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        period: "26.12"
         authors:
           - Sogang University
         date: 2026-12
@@ -120,6 +129,7 @@ cv:
         summary: "Fall 2026 (expected)."
 
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        period: "26.08"
         authors:
           - Sogang University
         date: 2026-08
@@ -127,6 +137,7 @@ cv:
         summary: "Summer 2026."
 
       - title: Encouragement Prize, 11th DB GAPS Investment Competition
+        period: "25.10"
         authors:
           - DB Financial Investment
         date: 2025-10
@@ -134,6 +145,7 @@ cv:
         summary: "National undergraduate investment strategy competition."
 
       - title: Best Team Award, DS Division
+        period: "25.08"
         authors:
           - Samsung Electronics
         date: 2025-08
@@ -141,6 +153,7 @@ cv:
         summary: "Device Solutions division team project award."
 
       - title: Ilju Academy and Culture Foundation Scholarship
+        period: "25.08 – 27.12"
         authors:
           - Taekwang Group
         date: 2025-08
@@ -148,6 +161,7 @@ cv:
         summary: "Merit scholarship, August 2025 – December 2027 (ongoing)."
 
       - title: Alumni Association Scholarship
+        period: "25.03"
         authors:
           - Sogang University Alumni Association
         date: 2025-03
@@ -155,6 +169,7 @@ cv:
 
     Volunteer:
       - company: Local Children's Center, Bucheon
+        period: "25.09 – present"
         position: English Tutor (Volunteer)
         location: Bucheon, Republic of Korea
         start_date: 2025-09
@@ -164,6 +179,7 @@ cv:
           - "Designed and produced the lesson materials used in each session."
 
       - company: AIESEC in FHCMC
+        period: "24.12 – 25.02"
         position: Global Volunteer (Exchange Participant)
         location: Ho Chi Minh City, Vietnam
         start_date: 2024-12

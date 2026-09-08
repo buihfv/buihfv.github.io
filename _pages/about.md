@@ -22,6 +22,10 @@ profile:
         - "Sogang University, <em>Republic of Korea</em>"
         - "GPA 4.17 / 4.3 · Summa Cum Laude (expected)"
 
+feature:
+  # image: research_llzo_interface.jpg   # assets/img/ 안의 파일명. 넣으면 소개글 왼쪽에 표시됨
+  caption: "FeF₃/LLZO interface model"
+
 selected_papers: false # turn on once _bibliography/papers.bib has entries marked selected={true}
 social: false # the icon row is rendered inside the masthead instead
 

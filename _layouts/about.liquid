@@ -19,7 +19,9 @@ layout: default
       <div class="masthead-details">
         <h1 class="masthead-name">
           {% if site.title == 'blank' %}
-            {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}
+            {{ site.first_name }}
+            {{ site.middle_name }}
+            {{ site.last_name }}
           {% else %}
             {{ site.title }}
           {% endif %}
@@ -27,12 +29,17 @@ layout: default
 
         {% if page.profile.affiliation %}
           <p class="masthead-affil">
-            {% for line in page.profile.affiliation %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}
+            {% for line in page.profile.affiliation -%}
+              {{- line -}}
+              {%- unless forloop.last %}<br>{% endunless -%}
+            {%- endfor %}
           </p>
         {% endif %}
 
         {% if page.profile.email %}
-          <p class="masthead-mail"><a href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a></p>
+          <p class="masthead-mail">
+            <a href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a>
+          </p>
         {% endif %}
 
         <div class="masthead-icons">
@@ -40,40 +47,84 @@ layout: default
             <a href="mailto:{{ page.profile.email }}" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           {% endif %}
           {% if site.data.socials.scholar_userid %}
-            <a href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
+            <a
+              href="https://scholar.google.com/citations?user={{ site.data.socials.scholar_userid }}"
+              title="Google Scholar"
+              aria-label="Google Scholar"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="ai ai-google-scholar"></i
+            ></a>
           {% endif %}
           {% if site.data.socials.github_username %}
-            <a href="https://github.com/{{ site.data.socials.github_username }}" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+            <a
+              href="https://github.com/{{ site.data.socials.github_username }}"
+              title="GitHub"
+              aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-github"></i
+            ></a>
           {% endif %}
           {% if site.data.socials.linkedin_username %}
-            <a href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a
+              href="https://www.linkedin.com/in/{{ site.data.socials.linkedin_username }}"
+              title="LinkedIn"
+              aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
           {% endif %}
           {% if site.data.socials.cv_pdf %}
-            <a href="{{ site.data.socials.cv_pdf | relative_url }}" title="Curriculum vitae" aria-label="Curriculum vitae" target="_blank" rel="noopener noreferrer"><span class="cv-mark">CV</span></a>
+            <a
+              href="{{ site.data.socials.cv_pdf | relative_url }}"
+              title="Curriculum vitae"
+              aria-label="Curriculum vitae"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span class="cv-mark">CV</span></a
+            >
           {% endif %}
         </div>
-
-        {% if page.profile.vitae %}
-          <div class="masthead-vitae">
-            {% for entry in page.profile.vitae %}
-              <div class="vitae-row">
-                <i class="{% if entry.icon %}{{ entry.icon }}{% else %}fa-solid fa-graduation-cap{% endif %}" aria-hidden="true"></i>
-                <div>
-                  <p class="vitae-title">{{ entry.title }}</p>
-                  {% if entry.lines %}
-                    <p class="vitae-sub">
-                      {% for line in entry.lines %}{{ line }}{% unless forloop.last %}<br>{% endunless %}{% endfor %}
-                    </p>
-                  {% endif %}
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        {% endif %}
       </div>
+
+      {% if page.profile.vitae %}
+        <div class="masthead-vitae">
+          {% for entry in page.profile.vitae %}
+            <div class="vitae-row">
+              <i class="{% if entry.icon %}{{ entry.icon }}{% else %}fa-solid fa-graduation-cap{% endif %}" aria-hidden="true"></i>
+              <div>
+                <p class="vitae-title">{{ entry.title }}</p>
+                {% if entry.lines %}
+                  <p class="vitae-sub">
+                    {% for line in entry.lines -%}
+                      {{- line -}}
+                      {%- unless forloop.last %}<br>{% endunless -%}
+                    {%- endfor %}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
 
-    <div class="about-body">{{ content }}</div>
+    <div class="about-band">
+      <div class="about-figure">
+        {% if page.feature and page.feature.image %}
+          {% assign feature_path = page.feature.image | prepend: 'assets/img/' %}
+          {% include figure.liquid loading="lazy" path=feature_path class="img-fluid" alt=page.feature.caption %}
+          {% if page.feature.caption %}
+            <p class="about-figure-caption">{{ page.feature.caption }}</p>
+          {% endif %}
+        {% else %}
+          <span class="about-figure-empty" aria-hidden="true"></span>
+        {% endif %}
+      </div>
+      <div class="about-body">{{ content }}</div>
+    </div>
 
     {% if page.announcements and page.announcements.enabled %}
       <h2 class="about-section">News</h2>
@@ -86,6 +137,13 @@ layout: default
         {% endif %}
         {% for item in news limit: news_limit %}
           <div class="newsfeed-item">
+            <span class="newsfeed-thumb">
+              {% if item.img %}
+                {% include figure.liquid loading="lazy" path=item.img class="img-fluid" alt=item.title %}
+              {% else %}
+                <span class="newsfeed-thumb-empty" aria-hidden="true"></span>
+              {% endif %}
+            </span>
             <span class="newsfeed-date">{{ item.date | date: '%m/%Y' }}</span>
             <span class="newsfeed-text">
               {% if item.inline %}
