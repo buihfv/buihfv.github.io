@@ -24,13 +24,14 @@ A lot of experimental work is neither difficult nor interesting: the same pipett
 
 ## Results
 
-TODO: a GIF of the arm being teleoperated is worth more than any paragraph — record one and put it here, before the still image.
-
-<div style="max-width:640px;">
-  {% include figure.liquid loading="eager" path="assets/img/project_robot_arm.jpg" title="Robotic arm" class="img-fluid rounded z-depth-1" %}
+<div class="project-video">
+  <video controls playsinline preload="metadata" poster="{{ '/assets/img/project_robot_arm_poster.jpg' | relative_url }}">
+    <source src="{{ '/assets/video/robot_arm_teleop.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support embedded video.
+  </video>
 </div>
 <div class="caption">
-  TODO_CAPTION
+  Teleoperating the arm: the leader arm on the right drives the follower on the left in real time.
 </div>
 
 - Real-time teleoperation working end to end.

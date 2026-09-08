@@ -243,8 +243,8 @@ footer.sticky-bottom {
 
 .about-page .masthead {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 2rem;
+  grid-template-columns: 190px minmax(0, 0.82fr) minmax(0, 1.28fr);
+  gap: 1.9rem;
   align-items: start;
   margin-top: 1.5rem;
 }
@@ -328,10 +328,21 @@ footer.sticky-bottom {
   font-size: 1.05rem;
 }
 
-.about-page .vitae-sub {
-  margin: 0.15rem 0 0;
+.about-page .vitae-sub,
+.about-page .vitae-sub em,
+.about-page .vitae-sub span {
+  margin-top: 0;
   font-size: 0.92rem;
   color: var(--global-text-color-light);
+}
+
+.about-page .vitae-sub {
+  margin: 0.15rem 0 0;
+  overflow-wrap: break-word;
+}
+
+.about-page .vitae-sub a {
+  color: var(--global-theme-color);
 }
 
 /* ---------- body copy ---------- */
@@ -411,7 +422,7 @@ footer.sticky-bottom {
 
 .about-page .newsfeed-item {
   display: grid;
-  grid-template-columns: 130px 5.4rem minmax(0, 1fr);
+  grid-template-columns: 118px 5.4rem minmax(0, 1fr);
   gap: 1.1rem;
   align-items: start;
   font-size: 1rem;
@@ -419,11 +430,15 @@ footer.sticky-bottom {
 
 .about-page .newsfeed-thumb {
   display: block;
-  width: 130px;
+  width: 118px;
 }
 
+/* square thumbnails; the source files are already cropped 1:1, so nothing
+   important gets cut here */
 .about-page .newsfeed-thumb img {
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   height: auto;
   display: block;
   border: 1px solid var(--global-divider-color);
@@ -432,7 +447,7 @@ footer.sticky-bottom {
 .about-page .newsfeed-thumb-empty {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   border: 1px dashed var(--global-divider-color);
 }
 
@@ -627,6 +642,20 @@ footer.sticky-bottom {
   color: var(--global-text-color-light);
 }
 
+/* ---------- project page video ---------- */
+
+.project-video {
+  max-width: 380px;
+}
+
+.project-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--global-divider-color);
+  background: #000;
+}
+
 /* ---------- CV page (hand-rendered from _data/cv.yml) ---------- */
 
 .cv-page .cv-topline {
@@ -758,13 +787,13 @@ footer.sticky-bottom {
   }
 
   .about-page .newsfeed-item {
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: 88px minmax(0, 1fr);
     row-gap: 0.2rem;
   }
 
   .about-page .newsfeed-thumb {
     grid-row: span 2;
-    width: 96px;
+    width: 88px;
   }
 
   .about-page .about-band {

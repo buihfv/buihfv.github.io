@@ -33,7 +33,7 @@ cv:
         score: "GPA 4.17 / 4.3 (≈ 3.88 / 4.0)"
         highlights:
           - "Summa Cum Laude (expected), pending final semester GPA."
-          - "President's Award & Dean's List with Highest Honors (Top 1%) — Summer 2026, and expected Fall 2026."
+          - "President's Award & Dean's List with Highest Honors (Top 1%) for the Fall 2025 semester, and expected again for Spring 2026."
 
     Experience:
       - company: Materials Design and Process Engineering Laboratory, Sogang University
@@ -120,49 +120,37 @@ cv:
 
     Awards:
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "26.12"
-        authors:
-          - Sogang University
-        date: 2026-12
+        period: "26.10"
+        date: 2026-10
         awarder: Sogang University
-        summary: "Fall 2026 (expected)."
+        summary: "For the Spring 2026 semester (expected)."
 
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "26.08"
-        authors:
-          - Sogang University
-        date: 2026-08
+        period: "26.05"
+        date: 2026-05
         awarder: Sogang University
-        summary: "Summer 2026."
+        summary: "For the Fall 2025 semester."
 
       - title: Encouragement Prize, 11th DB GAPS Investment Competition
         period: "25.10"
-        authors:
-          - DB Financial Investment
         date: 2025-10
         awarder: DB Financial Investment
         summary: "National undergraduate investment strategy competition."
 
       - title: Best Team Award, DS Division
         period: "25.08"
-        authors:
-          - Samsung Electronics
         date: 2025-08
         awarder: Samsung Electronics
         summary: "Device Solutions division team project award."
 
       - title: Ilju Academy and Culture Foundation Scholarship
         period: "25.08 – 27.12"
-        authors:
-          - Taekwang Group
         date: 2025-08
         awarder: Ilju Academy and Culture Foundation, Taekwang Group
         summary: "Merit scholarship, August 2025 – December 2027 (ongoing)."
 
       - title: Alumni Association Scholarship
         period: "25.03"
-        authors:
-          - Sogang University Alumni Association
         date: 2025-03
         awarder: Sogang University Alumni Association
 
@@ -261,14 +249,3 @@ cv:
         level: Intermediate
         icon: fa-solid fa-flask
         keywords: "TODO — list what you have actually operated, e.g. planetary ball mill, glovebox, potentiostat (EC-Lab), XRD sample preparation"
-
-    Languages:
-      - name: Korean
-        summary: "Native"
-      - name: English
-        summary: "Professional working proficiency — TOEFL TODO_SCORE (TODO_DATE)"
-
-    Interests:
-      - name: Research interests
-        icon: fa-solid fa-magnifying-glass-chart
-        keywords: "Solid electrolyte interfaces, thermal and all-solid-state batteries, defect physics in amorphous semiconductors, machine-learning interatomic potentials, high-throughput materials screening"

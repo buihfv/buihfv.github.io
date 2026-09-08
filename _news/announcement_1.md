@@ -1,9 +1,9 @@
 ---
 layout: post
-date: 2025-12-01 09:00:00+0900
-# img: assets/img/news/<file>.jpg  # 사진 넣으면 날짜 왼쪽 칸에 표시됨
+date: 2025-08-22 09:00:00+0900
+img: assets/img/news_samsung.jpg
 inline: true
 related_posts: false
 ---
 
-Joined the Materials Design and Process Engineering Laboratory as an undergraduate researcher.
+Our team won the Grand Prize at Samsung Shining Star 2025, DS Division, Samsung Electronics.
