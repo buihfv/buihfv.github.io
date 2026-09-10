@@ -1,9 +1,9 @@
 ---
 layout: post
-date: 2026-08-25 09:00:00+0900
-# img: assets/img/news/<file>.jpg  # 사진 넣으면 날짜 왼쪽 칸에 표시됨
+date: 2025-12-01 09:00:00+0900
+published: false # 비활성 — News에 안 나옴. 다시 쓰려면 published를 true로 바꾸거나 이 줄을 지우면 됨
 inline: true
 related_posts: false
 ---
 
-President's Award and Dean's List with Highest Honors (Top 1%), Sogang University.
+Joined the Materials Design and Process Engineering Laboratory as an undergraduate researcher.

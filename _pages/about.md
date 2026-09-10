@@ -31,7 +31,7 @@ social: false # the icon row is rendered inside the masthead instead
 announcements:
   enabled: true
   scrollable: false
-  limit: 6
+  limit: 4
 
 latest_posts:
   enabled: false # no blog on this site
