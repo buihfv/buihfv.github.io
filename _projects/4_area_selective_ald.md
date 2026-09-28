@@ -60,6 +60,8 @@ What ALD does not solve is patterning. It deposits everywhere, so anything unwan
 <div class="media-text" markdown="1">
 Area-selective ALD removes the etch step instead of improving it. An inhibitor is pre-coated on the regions that must stay bare, so the precursor can only adsorb where there is no inhibitor, and the pattern comes out of the deposition itself.
 
+
+
 That moves the whole problem into chemistry. Selectivity depends on the particular combination of substrate, inhibitor and precursor, and there are dozens of plausible combinations. Some work; others fail through inhibitor penetration, decomposition, or overgrowth on the surface that was supposed to stay clean. Validating each one experimentally is exactly the time and cost that AS-ALD was meant to save.
 </div>
 </div>
@@ -80,7 +82,8 @@ Adsorption energy is the quantity that decides it:
 
 $$E_{\text{ads}} = E_{\text{total}} - (E_{\text{surface}} + E_{\text{molecule}})$$
 
-A large negative value means the molecule binds strongly and spontaneously; a positive value means it does not stick at all.
+A large negative value means the molecule binds strongly and spontaneously;
+a positive value means it does not stick at all.
 
 I built hydroxylated Al₂O₃ and SiO₂ slabs, placed acetylacetone on each, and relaxed the structures in VASP.
 </div>
@@ -93,11 +96,13 @@ I built hydroxylated Al₂O₃ and SiO₂ slabs, placed acetylacetone on each, a
 <div class="media-pair">
 <figure>
   <img src="{{ '/assets/img/ald_al2o3_hacac.jpg' | relative_url }}" alt="Hacac adsorbed on a hydroxylated Al2O3 slab">
-  <figcaption>Al₂O₃ · E<sub>ads</sub> = −2.3 eV</figcaption>
+  <figcaption>Al₂O₃ : E<sub>ads</sub> = −2.3 eV</figcaption>
 </figure>
 <figure>
   <img src="{{ '/assets/img/ald_sio2_hacac.jpg' | relative_url }}" alt="Hacac above a hydroxylated SiO2 slab">
-  <figcaption>SiO₂ · E<sub>ads</sub> = +0.1 eV</figcaption>
+  <figcaption>
+  
+  SiO₂ : E<sub>ads</sub> = +0.1 eV</figcaption>
 </figure>
 </div>
 </div>
@@ -114,15 +119,12 @@ That is precisely the contrast area-selective ALD needs, and the mechanism behin
 
 ## Impacts
 
-- Selectivity for this pair was established computationally, with no deposition run.
+- Selectivity for this pair was established computationally, without any experiment.
 - The same two-slab calculation generalises: any substrate–inhibitor pair can be ranked this way, which turns a combinatorial experimental search into a short list.
 - Frames DFT as a process-engineering tool rather than an academic one — the screening pays for itself in chamber time.
 
 ## Skills
 
-VASP · DFT (surface slab models, adsorption energy, charge-density difference) · VESTA · area-selective ALD process analysis
+VASP · DFT · AVOGADRO · area-selective ALD process analysis
 
-## Resources
 
-- Presentation slides: TODO_LINK
-- Slab structures (Al₂O₃, SiO₂ POSCAR): TODO_LINK

@@ -16,7 +16,7 @@ A Bash resource monitor reporting per-GPU utilization and per-user job allocatio
 
 ## Motivation
 
-The group's calculations run on three machines, one of them a shared external GPU server with no scheduler in front of it. That left two blind spots at opposite ends of a job's life.
+The group's calculations run on servers, one of them a shared external GPU server with no scheduler in front of it. That left two blind spots at opposite ends of a job's life.
 
 Before submitting, there was no way to see whether the GPUs were already saturated or by whom — `nvidia-smi` reports processes, not people, so a PID told you nothing about whose calculation it belonged to. Members submitted into a full machine, everyone's jobs slowed down, and the cause was invisible.
 
@@ -32,13 +32,13 @@ After a run, the outcome sat in a directory nobody was watching. A job that had 
 </figure>
 <figure>
   <img src="{{ '/assets/img/vasp_cpu_status.jpg' | relative_url }}" alt="CPU availability section of the same report">
-  <figcaption>The same pass reports free cores and how to terminate a job safely.</figcaption>
+  <figcaption>The same pass reports free cpu cores and every running calculation grouped by user and directory.</figcaption>
 </figure>
 </div>
 <div class="media-text" markdown="1">
 **`resource_status` — turning PIDs into people.** For each compute process the script resolves `/proc/<pid>/cwd`, extracts the owning user from the path, and groups every allocation by user and by calculation directory. The output is per-GPU utilization and free memory with an OK/insufficient flag against a 15 GB threshold, then a per-user breakdown showing which GPUs each calculation holds.
 
-The same pass covers CPU occupancy, and prints the safe way to stop a job — identify the parent PID through `/proc/<pid>/cmd` and kill that, never a pattern match, which on a shared machine would take down other people's runs along with your own.
+The script also covers CPU occupancy, and prints the safe way to stop a job — identify the parent PID through `/proc/<pid>/cmd` and kill that, never a pattern match, which on a shared machine would take down other people's runs along with your own. (I killed everyone's calculations...It was my big mistake in 2026)
 </div>
 </div>
 
@@ -62,7 +62,7 @@ The same pass covers CPU occupancy, and prints the safe way to stop a job — id
 <div class="media-col">
 <figure>
   <img src="{{ '/assets/img/vasp_run_log.jpg' | relative_url }}" alt="Google Sheets log of finished VASP runs">
-  <figcaption>Every finished run lands here: start and end time, path, convergence, energy, cut-off, k-points, ENCUT and core count.</figcaption>
+  <figcaption>Every finished run lands here: start and end time, path, convergence, energy, cut-off, k-points, and ENCUT...</figcaption>
 </figure>
 </div>
 <div class="media-text" markdown="1">
@@ -80,8 +80,6 @@ The same pass covers CPU occupancy, and prints the safe way to stop a job — id
 
 ## Skills
 
-Python · Bash · Linux · REST APIs (Google Apps Script, Telegram Bot API) · VASP output parsing · multi-server workflow automation
+Python · Bash · Linux · REST APIs (Google Script API, Telegram API) · multi-server workflow automation
 
-## Resources
 
-- Code: TODO_GITHUB_REPO_URL

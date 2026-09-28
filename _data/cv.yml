@@ -1,5 +1,5 @@
 # Web CV, rendered by _pages/cv.md straight from this file.
-# Section order and wording follow CV_v91.docx — keep the two in step.
+# Section order and wording follow CV_v11.docx — keep the two in step.
 
 cv:
   name: Youngmin Jo
@@ -26,16 +26,8 @@ cv:
         location: Seoul, South Korea
         url: https://www.sogang.ac.kr/en/
         area: Mechanical Engineering
-        studyType: B.S. in Mechanical Engineering
+        studyType: B.S. in Mechanical Engineering, Summa Cum Laude (expected)
         score: "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
-        highlights:
-          - "Summa Cum Laude (expected)."
-
-      - institution: Republic of Korea Army
-        period: "22.03 – 23.06"
-        location: South Korea
-        studyType: Military Leave of Absence
-        summary: "Chinook crew member."
 
     Research Experience:
       - company: Materials Design and Process Engineering Laboratory, Sogang University
@@ -44,9 +36,9 @@ cv:
         location: Seoul, South Korea
         summary: "Advised by Prof. Heonjae Jeong."
         highlights:
-          - "**Origin of Negative Photoconductivity in Amorphous ZnON** (2/2026 – 8/2026) — performed hybrid DFT (PBE0) and AIMD calculations on amorphous ZnON to determine the origin of negative photoconductivity; traced it to two coexisting trap channels, N 2p-derived hole localization and low-coordination Zn-derived electron localization, and quantified their trap energies at the valence and conduction band edges."
-          - "**Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present) — evaluating interfacial thermodynamic stability and Li-ion conductivity of Al-, Ga-, Ta- and Sr+Ta-doped LLZO solid electrolytes at the LiSi anode and FeF₃ cathode interfaces for thermal-battery applications, assessing dopant-dependent phase stability and Li-ion transport at realistic operating conditions (500 °C) with first-principles calculations and a machine-learning interatomic potential."
+          - "**Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present) — evaluating interfacial thermodynamic stability and Li-ion conductivity of Al-, Ga-, Ta- and Sr+Ta-doped LLZO solid electrolytes at the Li₁₃Si₄ anode and FeF₃ cathode interfaces for thermal-battery applications; assessing dopant-dependent interfacial phase stability and Li-ion transport under realistic operating conditions (500 °C) using first-principles calculations and a machine learning interatomic potential (MLIP)."
           - "**Synthesis of Fluoride-Ion Solid Electrolytes Derived from Inverse Design** (8/2026 – present) — benchmarking the group's first experimental workflow by synthesizing β-PbSnF₄ and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions."
+          - "**Origin of Negative Photoconductivity in Amorphous ZnON** (2/2026 – 8/2026) — performed hybrid DFT (PBE0) and AIMD calculations on amorphous ZnON to determine the origin of negative photoconductivity; traced it to two coexisting trap channels, N 2p-derived hole localization and low-coordination Zn-derived electron localization, and quantified their trap energies at the valence and conduction band edges."
 
     Publications:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON
@@ -59,56 +51,39 @@ cv:
         publisher: "Manuscript in preparation (working title)"
 
     Technical Projects:
-      - name: Computational Workflow Automation for VASP
+      - name: Monitoring and Logging Tools for Multi-Server VASP Calculations
         period: "26.07 – 26.09"
         highlights:
-          - "Built a GPU utilization monitor for a shared external compute server, reporting per-GPU load and per-user occupancy."
-          - "Filled a monitoring gap left by the HPC scheduler, giving the group a way to check load before submitting jobs."
-          - "Added automated logging of calculation parameters, outputs, and completion/failure notifications across three compute servers."
-          - "*Skills:* Python, Linux/Bash, REST APIs."
+          - "Developed a Bash resource monitor reporting per-GPU utilization and per-user job allocation on a shared Linux server."
+          - "Built job launchers that check GPU/core availability and flag conflicts before VASP runs, now used by the group."
+          - "Automated result logging and alerts by parsing VASP outputs for convergence, energy, and run settings, then sending them to Google Sheets and Telegram via REST APIs across three compute servers."
 
-      - name: "Area-Selective ALD: A Computational Screening Approach"
+      - name: Computational Pre-Screening for Area-Selective ALD
         period: "26.03 – 26.06"
-        summary: "Manufacturing Processes"
+        summary: "Manufacturing Process — Top 5 report, selected for class presentation"
         highlights:
-          - "Surveyed the limitations of conventional deposition methods and examined area-selective ALD as an emerging solution, along with its deposition mechanism."
-          - "Introduced first-principles (VASP) high-throughput screening as a computational tool that evaluates precursor–substrate interactions prior to experimental deposition, reducing cost while increasing throughput."
-          - "Illustrated the approach with a toy model comparing reaction energies of two precursor–substrate systems, distinguishing an energetically unfavorable case from one in which deposition stabilizes the system."
-          - "*Skills:* VASP, DFT, ALD process analysis."
+          - "Investigated area-selective ALD as a bottom-up alternative to top-down etching, where edge placement errors limit 3D transistor patterning."
+          - "Proposed VASP-based pre-screening of substrate–inhibitor pairs to cut experimental time and cost, demonstrated with acetylacetone, which adsorbs on Al₂O₃ but not on SiO₂ (hydroxylated slabs)."
 
       - name: Automated Robotic Arm Teleoperation System
         period: "26.03 – 26.06"
         highlights:
           - "Developed a motion-driven robotic arm system capable of real-time teleoperation, aimed at automating repetitive lab experiments and manual labor tasks."
           - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing traditional hard-coding methods."
-          - "*Skills:* LeRobot package, computer vision, Linux, Autodesk Inventor, 3D printing."
 
-      - name: Structural and Thermal Evaluation of Composite Fishing Rod Materials
+      - name: Analysis for Aramid-Hybrid CFRP Fishing Rod
         period: "25.09 – 25.12"
-        summary: "Fundamentals of Engineering Materials (course project)"
+        summary: "Fundamentals of Engineering Materials"
         highlights:
-          - "Investigated whether combining two composite materials could improve the elastic and structural performance of a fishing rod, using ANSYS simulation."
-          - "Performed an impact analysis by varying the velocity of a steel ball striking the rod structure to determine the load threshold at failure, showing an improvement over a conventional single-material design."
-          - "Conducted a supplementary thermal analysis to evaluate the thermal expansion coefficients of the composite materials across the temperature range relevant to marine field conditions."
-          - "*Skills:* ANSYS (structural and thermal analysis), composite materials."
+          - "Showed in LS-DYNA that replacing the outermost CFRP ply of a tapered rod tube with aramid (AFRP) increases steel-sphere impact energy absorption by 130% and shifts failure from brittle fragmentation to ductile deformation."
+          - "Proposed the CFRP–AFRP hybrid layup, with a TiO₂ UV-protective coating for the aramid, to keep fishing rods reliable in harsh conditions: intense sunlight, salt exposure, and temperature swings."
 
-      - name: Predictive Weather Navigation System
+      - name: Weather-Aware Navigation Using Estimated Arrival Times
         period: "25.08 – 25.12"
         summary: "C Programming Basic"
         highlights:
-          - "Developed a dynamic route-planning application in C that predicts weather conditions at specific waypoints along a route."
-          - "Synchronized spatial coordinates from a navigation API with temporal data from a meteorological API."
-          - "Engineered a data processing pipeline to extract, parse, and integrate raw external datasets into a functional format."
-          - "*Skills:* C, REST APIs (navigation and weather)."
-
-      - name: Design and Fabrication of a Linear-Actuator Camera Tracking Slider
-        period: "25.03 – 25.06"
-        summary: "Machine Production Practice"
-        highlights:
-          - "Designed a linear-rail camera slider frame using 3D CAD, built from an aluminum block and bolted joints."
-          - "Selected and mounted a linear actuator motor to drive the camera along the rail."
-          - "Implemented Arduino-based motor control to regulate actuator speed, direction, and reciprocating motion for smooth camera tracking shots."
-          - "*Skills:* 3D CAD, Arduino."
+          - "Built a C navigation tool that estimates when a driver will reach each point on a route and shows the weather forecast for that point at that time, rather than a single snapshot at departure."
+          - "Integrated navigation, map, and Korea Meteorological Administration forecast APIs, matching estimated arrival times to hourly forecasts and sampling weather every 5 km along the route on an interactive map."
 
     Coursework:
       - period: "2027 Spring"
@@ -132,7 +107,7 @@ cv:
 
       - period: "2026 Spring"
         courses:
-          - Manufacturing Processes
+          - Manufacturing Process
           - Automatic Control
           - Heat Transfer
           - Refrigeration and Air Conditioning
@@ -144,16 +119,16 @@ cv:
           - Engineering Mathematics II
           - Fluid Mechanics I
           - Dynamics
-          - Fundamentals of Mechanical Materials
+          - Fundamentals of Engineering Materials
           - Linear Algebra
-          - Introduction to C Programming
+          - C Programming Basic
 
       - period: "2025 Spring"
         courses:
           - Engineering Mathematics I
           - Solid Mechanics
           - Thermodynamics I
-          - Machine Shop Practice
+          - Machine Production Practice
           - Computer-Aided Design
 
       - period: "2024 Fall"
@@ -171,11 +146,7 @@ cv:
 
     Awards & Scholarships:
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "Spring 2026"
-        awarder: Sogang University
-
-      - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "Fall 2025"
+        period: "Spring 2026, Fall 2025"
         awarder: Sogang University
 
       - title: Encouragement Prize, 11th DB GAPS Investment Competition
@@ -199,7 +170,7 @@ cv:
         period: "24.03 – 27.06"
         position: President (previously Vice President, Executive Committee Member)
         highlights:
-          - "Direct member engineering projects and manage a technical corporate collaboration with Taejin Technology (HTC KOREA)."
+          - "Direct member engineering projects and manage a technical collaboration with Taejin Technology (HTC KOREA)."
 
       - company: Samsung Electronics, South Korea
         period: "25.08"
@@ -215,16 +186,10 @@ cv:
           - "Deliver biweekly English lesson plans and academic mentorship to five middle school students."
 
       - company: MECHA, Sogang University
-        period: "26.03"
+        period: "26.03, 25.05"
         position: Technical Seminar Instructor
         highlights:
-          - "Designed and delivered a seminar on Arduino-based hardware prototyping."
-
-      - company: MECHA, Sogang University
-        period: "25.05"
-        position: Technical Seminar Instructor
-        highlights:
-          - "Designed and delivered a seminar on 3D modeling and printing."
+          - "Designed and delivered a seminar on Arduino-based hardware prototyping, 3D modeling and printing."
 
       - company: AIESEC in FHCMC, Vietnam
         period: "24.12 – 25.02"
