@@ -2,7 +2,7 @@
 layout: page
 title: Project
 permalink: /projects/
-description: Hardware and applied-AI projects built outside the lab.
+description: Hardware, control and computational projects built alongside the research.
 nav: true
 nav_order: 3
 display_categories: [work, fun] # unused: enable_project_categories is false in _config.yml

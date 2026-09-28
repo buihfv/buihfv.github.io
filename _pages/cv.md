@@ -4,11 +4,11 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 4
-description: Full curriculum vitae. The PDF is the condensed two-page version.
+description: Full curriculum vitae. The PDF is the printable version.
 ---
 
 {% assign cv = site.data.cv.cv %}
-{% assign order = "Education,Experience,Publications,Projects,Coursework,Awards,Skills,Volunteer" | split: "," %}
+{% assign order = "Education,Research Experience,Publications,Technical Projects,Coursework,Awards & Scholarships,Leadership Experience,Teaching & Outreach,Technical Skills" | split: "," %}
 
 <div class="cv-page">
 
@@ -23,14 +23,14 @@ description: Full curriculum vitae. The PDF is the condensed two-page version.
 </div>
 
 <nav class="section-jump" aria-label="CV sections">
-{% for name in order %}{% if cv.sections[name] %}<a href="#{{ name | downcase }}">{{ name }}</a>{% endif %}{% endfor %}
+{% for name in order %}{% if cv.sections[name] %}<a href="#{{ name | slugify }}">{{ name }}</a>{% endif %}{% endfor %}
 </nav>
 
 {% for name in order %}
 {% assign entries = cv.sections[name] %}
 {% if entries %}
 
-<section class="cv-section" id="{{ name | downcase }}">
+<section class="cv-section" id="{{ name | slugify }}">
 <h2>{{ name }}</h2>
 
 {% if name == "Coursework" %}
@@ -46,7 +46,7 @@ description: Full curriculum vitae. The PDF is the condensed two-page version.
 </div>
 {% endfor %}
 
-{% elsif name == "Skills" %}
+{% elsif name == "Technical Skills" %}
 {% for e in entries %}
 
 <div class="cv-labelrow">

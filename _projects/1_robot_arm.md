@@ -3,7 +3,7 @@ layout: page
 title: Automated Robotic Arm Teleoperation
 description: A motion-driven robotic arm that takes over the repetitive parts of lab work through real-time teleoperation.
 img: assets/img/project_robot_arm.jpg
-importance: 1
+importance: 3
 category: work
 related_publications: false
 ---

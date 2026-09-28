@@ -3,7 +3,7 @@ layout: page
 title: Wildfire Detection Drone with AI
 description: A custom quadcopter that streams live video, detects fire with YOLO, and drops water on the spot.
 img: assets/img/project_wildfire_drone.jpg
-importance: 2
+importance: 7
 category: work
 related_publications: false
 ---

@@ -1,177 +1,114 @@
-# Web CV, rendered by the al_folio_cv plugin (cv_format: rendercv in _pages/cv.md).
-# This is the DETAILED version — the 2-page PDF is the condensed one.
-# Anything marked TODO_ still needs input.
+# Web CV, rendered by _pages/cv.md straight from this file.
+# Section order and wording follow CV_v91.docx — keep the two in step.
 
 cv:
   name: Youngmin Jo
-  label: Undergraduate Researcher · Computational Materials Science
+  label: Undergraduate Student, Mechanical Engineering
   email: buihfv@sogang.ac.kr
   location: Seoul, Republic of Korea
   image: ""
   summary: >
     Undergraduate researcher at the Materials Design and Process Engineering Laboratory,
-    Sogang University, advised by Prof. Heonjae Jeong. First-principles modeling of solid
-    electrolyte interfaces for thermal batteries and of charge localization in amorphous
-    oxide semiconductors. Applying to US mechanical engineering PhD programs for 2027 enrollment.
+    Sogang University, advised by Prof. Heonjae Jeong. First-principles and machine-learning
+    approaches to thermal and charge transport in disordered and heterogeneous materials,
+    with emphasis on point defects and interfaces.
 
   social_networks:
     - network: GitHub
       username: buihfv
     - network: LinkedIn
-      username: 영민-조-45a91730a # TODO: change to an English LinkedIn slug and update here
+      username: 영민-조-45a91730a
 
   sections:
     Education:
       - institution: Sogang University
         period: "24.03 – 27.08"
-        location: Seoul, Republic of Korea
+        location: Seoul, South Korea
         url: https://www.sogang.ac.kr/en/
         area: Mechanical Engineering
-        studyType: B.S.
-        start_date: 2024-03
-        end_date: 2027-08
-        score: "GPA 4.17 / 4.3 (≈ 3.88 / 4.0)"
+        studyType: B.S. in Mechanical Engineering
+        score: "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
         highlights:
-          - "Summa Cum Laude (expected), pending final semester GPA."
-          - "President's Award & Dean's List with Highest Honors (Top 1%) for the Fall 2025 semester, and expected again for Spring 2026."
+          - "Summa Cum Laude (expected)."
 
-    Experience:
+      - institution: Republic of Korea Army
+        period: "22.03 – 23.06"
+        location: South Korea
+        studyType: Military Leave of Absence
+        summary: "Chinook crew member."
+
+    Research Experience:
       - company: Materials Design and Process Engineering Laboratory, Sogang University
         period: "25.12 – present"
         position: Undergraduate Researcher
-        location: Seoul, Republic of Korea
-        start_date: 2025-12
-        end_date: present
-        summary: "First-principles modeling of materials for energy and electronic devices, advised by Prof. Heonjae Jeong."
+        location: Seoul, South Korea
+        summary: "Advised by Prof. Heonjae Jeong."
         highlights:
-          - "**Thermodynamic stability and Li-ion conductivity of doped LLZO solid-electrolyte interfaces** (Jul 2026 – present): evaluating Al-, Ga-, Ta-, and Sr+Ta-doped LLZO at LiSi anode and FeF₃ cathode interfaces for thermal-battery applications; assessing dopant-dependent interfacial phase stability and Li-ion transport at realistic operating conditions (500 °C) from first principles."
-          - "Built a ~350-atom FeF₃/LLZO coherent interface model at ~8.5% lattice mismatch; diagnosed and resolved relaxation failures traced to sheared-supercell geometry, short F–Fe contacts, and vacuum-layer artifacts."
-          - "**Origin of negative photoconductivity in amorphous ZnON** (Feb – Aug 2026): performed first-principles calculations to explain negative photoconductivity in amorphous ZnON; identified charge-localization mechanisms at the valence band maximum and conduction band minimum using AIMD and hybrid DFT."
-          - "Evaluating universal machine-learning interatomic potentials (MACE) as a validated substitute for AIMD on ~600-atom systems across ten dopant variants."
-          - "Maintained VASP workflows on a KISTI supercomputer and a shared GPU server, including job submission, monitoring, and backup automation."
-
-      - company: Mechanical Engineering Society (MECHA), Sogang University
-        period: "24.03 – 27.06"
-        position: President (formerly Vice President, Executive Committee Member)
-        location: Seoul, Republic of Korea
-        start_date: 2024-03
-        end_date: 2027-06
-        summary: "Leading the departmental mechanical engineering student society."
-        highlights:
-          - "Directed member engineering projects across the society's annual programme."
-          - "Managed a technical corporate collaboration with Taejin Technology (HTC KOREA)."
-
-      - company: Samsung Electronics
-        period: "25.08"
-        position: Participant, Samsung Shining Star 2025
-        location: Republic of Korea
-        start_date: 2025-08
-        end_date: 2025-08
-        summary: "Intensive training programme on semiconductor memory manufacturing and the 8-step fabrication process."
+          - "**Origin of Negative Photoconductivity in Amorphous ZnON** (2/2026 – 8/2026) — performed hybrid DFT (PBE0) and AIMD calculations on amorphous ZnON to determine the origin of negative photoconductivity; traced it to two coexisting trap channels, N 2p-derived hole localization and low-coordination Zn-derived electron localization, and quantified their trap energies at the valence and conduction band edges."
+          - "**Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present) — evaluating interfacial thermodynamic stability and Li-ion conductivity of Al-, Ga-, Ta- and Sr+Ta-doped LLZO solid electrolytes at the LiSi anode and FeF₃ cathode interfaces for thermal-battery applications, assessing dopant-dependent phase stability and Li-ion transport at realistic operating conditions (500 °C) with first-principles calculations and a machine-learning interatomic potential."
+          - "**Synthesis of Fluoride-Ion Solid Electrolytes Derived from Inverse Design** (8/2026 – present) — benchmarking the group's first experimental workflow by synthesizing β-PbSnF₄ and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions."
 
     Publications:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON
-        period: "2026"
+        period: "In preparation"
         authors:
-          - TODO_FIRST_AUTHOR
-          - Youngmin Jo
-          - TODO_REMAINING_AUTHORS
-        publisher: Manuscript in preparation
-        releaseDate: 2026
-        summary: "Working title. Second author. TODO — update with the final author list and target journal once submitted."
+          - Y. Jo
+          - M. Heo
+          - H. Jeong
+          - et al.
+        publisher: "Manuscript in preparation (working title)"
 
-    # No conference presentations yet. When you give one, uncomment and duplicate this block:
-    # Presentations:
-    #   - title: TODO_PRESENTATION_TITLE
-    #     authors:
-    #       - Youngmin Jo
-    #       - TODO_COAUTHORS
-    #     publisher: "TODO_CONFERENCE_NAME, TODO_LOCATION (oral / poster)"
-    #     releaseDate: TODO_YYYY-MM-DD
-    #     summary: "TODO"
+    Technical Projects:
+      - name: Computational Workflow Automation for VASP
+        period: "26.07 – 26.09"
+        highlights:
+          - "Built a GPU utilization monitor for a shared external compute server, reporting per-GPU load and per-user occupancy."
+          - "Filled a monitoring gap left by the HPC scheduler, giving the group a way to check load before submitting jobs."
+          - "Added automated logging of calculation parameters, outputs, and completion/failure notifications across three compute servers."
+          - "*Skills:* Python, Linux/Bash, REST APIs."
 
-    Projects:
+      - name: "Area-Selective ALD: A Computational Screening Approach"
+        period: "26.03 – 26.06"
+        summary: "Manufacturing Processes"
+        highlights:
+          - "Surveyed the limitations of conventional deposition methods and examined area-selective ALD as an emerging solution, along with its deposition mechanism."
+          - "Introduced first-principles (VASP) high-throughput screening as a computational tool that evaluates precursor–substrate interactions prior to experimental deposition, reducing cost while increasing throughput."
+          - "Illustrated the approach with a toy model comparing reaction energies of two precursor–substrate systems, distinguishing an energetically unfavorable case from one in which deposition stabilizes the system."
+          - "*Skills:* VASP, DFT, ALD process analysis."
+
       - name: Automated Robotic Arm Teleoperation System
-        period: "26.03 – present"
-        summary: "Motion-driven robotic arm capable of real-time teleoperation, built to automate repetitive laboratory experiments and manual tasks."
+        period: "26.03 – 26.06"
         highlights:
-          - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing hard-coded control and making the remote-control path accessible."
-          - "Skills: LeRobot, computer vision, Linux, Autodesk Inventor, 3D printing."
-        start_date: 2026-03
-        end_date: present
+          - "Developed a motion-driven robotic arm system capable of real-time teleoperation, aimed at automating repetitive lab experiments and manual labor tasks."
+          - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing traditional hard-coding methods."
+          - "*Skills:* LeRobot package, computer vision, Linux, Autodesk Inventor, 3D printing."
 
-      - name: Wildfire Detection Drone
-        period: "TODO – present"
-        summary: "Custom quadcopter that streams live video from an onboard phone camera, detects fire with a YOLO model on a ground station, and releases a water payload over the detected spot."
+      - name: Structural and Thermal Evaluation of Composite Fishing Rod Materials
+        period: "25.09 – 25.12"
+        summary: "Fundamentals of Engineering Materials (course project)"
         highlights:
-          - "Built streaming, detection, and payload release as independent subsystems, then integrated them; automating alignment and release with a XIAO ESP32C6 running DroneBridge between ground station and flight controller."
-          - "Skills: Python, YOLO, INAV flight control (SpeedyBee F405 WING MINI), ESP32, servo actuation."
-        start_date: TODO_YYYY-MM
-        end_date: present
+          - "Investigated whether combining two composite materials could improve the elastic and structural performance of a fishing rod, using ANSYS simulation."
+          - "Performed an impact analysis by varying the velocity of a steel ball striking the rod structure to determine the load threshold at failure, showing an improvement over a conventional single-material design."
+          - "Conducted a supplementary thermal analysis to evaluate the thermal expansion coefficients of the composite materials across the temperature range relevant to marine field conditions."
+          - "*Skills:* ANSYS (structural and thermal analysis), composite materials."
 
       - name: Predictive Weather Navigation System
         period: "25.08 – 25.12"
-        summary: "Dynamic route-planning application in C that synchronizes spatial coordinates from a navigation API with temporal data from a meteorological API to predict weather at waypoints along a route."
+        summary: "C Programming Basic"
         highlights:
-          - "Engineered a data processing pipeline to extract, parse, and integrate raw external datasets into a usable format."
-          - "Skills: C, REST APIs (navigation and weather)."
-        start_date: 2025-08
-        end_date: 2025-12
+          - "Developed a dynamic route-planning application in C that predicts weather conditions at specific waypoints along a route."
+          - "Synchronized spatial coordinates from a navigation API with temporal data from a meteorological API."
+          - "Engineered a data processing pipeline to extract, parse, and integrate raw external datasets into a functional format."
+          - "*Skills:* C, REST APIs (navigation and weather)."
 
-    Awards:
-      - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "26.10"
-        date: 2026-10
-        awarder: Sogang University
-        summary: "For the Spring 2026 semester (expected)."
-
-      - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "26.05"
-        date: 2026-05
-        awarder: Sogang University
-        summary: "For the Fall 2025 semester."
-
-      - title: Encouragement Prize, 11th DB GAPS Investment Competition
-        period: "25.10"
-        date: 2025-10
-        awarder: DB Financial Investment
-        summary: "National undergraduate investment strategy competition."
-
-      - title: Best Team Award, DS Division
-        period: "25.08"
-        date: 2025-08
-        awarder: Samsung Electronics
-        summary: "Device Solutions division team project award."
-
-      - title: Ilju Academy and Culture Foundation Scholarship
-        period: "25.08 – 27.12"
-        date: 2025-08
-        awarder: Ilju Academy and Culture Foundation, Taekwang Group
-        summary: "Merit scholarship, August 2025 – December 2027 (ongoing)."
-
-      - title: Alumni Association Scholarship
-        period: "25.03"
-        date: 2025-03
-        awarder: Sogang University Alumni Association
-
-    Volunteer:
-      - company: Local Children's Center, Bucheon
-        period: "25.09 – present"
-        position: English Tutor (Volunteer)
-        location: Bucheon, Republic of Korea
-        start_date: 2025-09
-        end_date: present
-        summary: "Bi-weekly English instruction and academic mentorship for five middle school students."
+      - name: Design and Fabrication of a Linear-Actuator Camera Tracking Slider
+        period: "25.03 – 25.06"
+        summary: "Machine Production Practice"
         highlights:
-          - "Designed and produced the lesson materials used in each session."
-
-      - company: AIESEC in FHCMC
-        period: "24.12 – 25.02"
-        position: Global Volunteer (Exchange Participant)
-        location: Ho Chi Minh City, Vietnam
-        start_date: 2024-12
-        end_date: 2025-02
-        summary: "210 hours of service teaching English to secondary students and facilitating Korean language and cultural exchange sessions for university students."
+          - "Designed a linear-rail camera slider frame using 3D CAD, built from an aluminum block and bolted joints."
+          - "Selected and mounted a linear actuator motor to drive the camera along the rail."
+          - "Implemented Arduino-based motor control to regulate actuator speed, direction, and reciprocating motion for smooth camera tracking shots."
+          - "*Skills:* 3D CAD, Arduino."
 
     Coursework:
       - period: "2027 Spring"
@@ -232,20 +169,73 @@ cv:
           - General Physics I (+ lab)
           - Calculus I
 
-    Skills:
-      - name: Computational materials design
-        level: Advanced
-        icon: fa-solid fa-atom
-        keywords: "VASP (DFT, AIMD, hybrid functionals, NEB), Gaussian, pymatgen, ASE, VASPKIT, VESTA, Avogadro, MACE (MLIP), softBV / BVSE, Materials Project API"
-      - name: Programming and systems
-        level: Advanced
-        icon: fa-solid fa-code
-        keywords: "Python, C, Linux/Bash, WSL, Git, VS Code (Remote-SSH), HPC job submission and automation (KISTI supercomputer, GPU servers)"
-      - name: Engineering and design
-        level: Intermediate
-        icon: fa-solid fa-compass-drafting
-        keywords: "Autodesk Inventor, AutoCAD, MATLAB, OriginLab, Arduino, ESP32, 3D printing"
-      - name: Laboratory equipment
-        level: Intermediate
-        icon: fa-solid fa-flask
-        keywords: "TODO — list what you have actually operated, e.g. planetary ball mill, glovebox, potentiostat (EC-Lab), XRD sample preparation"
+    Awards & Scholarships:
+      - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        period: "Spring 2026"
+        awarder: Sogang University
+
+      - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        period: "Fall 2025"
+        awarder: Sogang University
+
+      - title: Encouragement Prize, 11th DB GAPS Investment Competition
+        period: "25.10"
+        awarder: DB Financial Investment
+
+      - title: Best Team Award, DS Division
+        period: "25.08"
+        awarder: Samsung Electronics, South Korea
+
+      - title: Ilju Academy and Culture Foundation Scholarship
+        period: "25.08 – 27.12"
+        awarder: Taekwang Group, South Korea
+
+      - title: Alumni Association Scholarship
+        period: "25.03"
+        awarder: Sogang University
+
+    Leadership Experience:
+      - company: MECHA, Mechanical Engineering Society, Sogang University
+        period: "24.03 – 27.06"
+        position: President (previously Vice President, Executive Committee Member)
+        highlights:
+          - "Direct member engineering projects and manage a technical corporate collaboration with Taejin Technology (HTC KOREA)."
+
+      - company: Samsung Electronics, South Korea
+        period: "25.08"
+        position: Team Leader, Samsung Shining Star 2025
+        highlights:
+          - "Led a project team through a training program focused on semiconductor foundry processes and the eight major fabrication steps, and presented the team's final project."
+
+    Teaching & Outreach:
+      - company: Local Children's Center, South Korea
+        period: "25.09 – 27.06"
+        position: English Tutor (Volunteer)
+        highlights:
+          - "Deliver biweekly English lesson plans and academic mentorship to five middle school students."
+
+      - company: MECHA, Sogang University
+        period: "26.03"
+        position: Technical Seminar Instructor
+        highlights:
+          - "Designed and delivered a seminar on Arduino-based hardware prototyping."
+
+      - company: MECHA, Sogang University
+        period: "25.05"
+        position: Technical Seminar Instructor
+        highlights:
+          - "Designed and delivered a seminar on 3D modeling and printing."
+
+      - company: AIESEC in FHCMC, Vietnam
+        period: "24.12 – 25.02"
+        position: Global Volunteer (Exchange Participant)
+        highlights:
+          - "Taught English to secondary students and facilitated Korean language and cultural exchange sessions for university students over 210 hours of service."
+
+    Technical Skills:
+      - name: Computational Materials Design
+        keywords: "VASP, Gaussian, Pymatgen, ASE, Avogadro"
+      - name: Programming & Systems
+        keywords: "Python, C, Linux/Bash, REST APIs"
+      - name: Engineering & Design
+        keywords: "Arduino, MATLAB, AutoCAD, Autodesk Inventor, 3D Printing"
