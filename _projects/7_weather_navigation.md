@@ -104,8 +104,3 @@ input                                     and travel time     per-time forecast 
 ## Skills
 
 C · REST APIs (Kakao Local, Kakao Mobility, KMA forecast) · JSON parsing · WGS84 → KMA grid coordinate conversion · linear interpolation · HTML map generation
-
-## Resources
-
-- Code: TODO_GITHUB_REPO_URL
-- Presentation slides: TODO_LINK

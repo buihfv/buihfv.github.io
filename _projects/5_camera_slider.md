@@ -95,7 +95,3 @@ TODO — travel length, payload capacity, traverse speed, or repeatability if an
 ## Skills
 
 3D CAD · technical drawing · aluminium machining · lead-screw and stepper drive selection · Arduino motor control
-
-## Resources
-
-- Photos / video: TODO_LINK

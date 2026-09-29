@@ -42,8 +42,3 @@ TODO — what this demonstrates, and where it goes next.
 Python · YOLO · INAV flight control (SpeedyBee F405 WING MINI) · ESP32 / DroneBridge · servo actuation · airframe build and tuning
 
 **Airframe** frame kit, 4 × 1400 KV motors, 4 × 40 A ESCs, 8045 props, 3S ~5000 mAh LiPo · HGLRC M100 GPS · 2.4 GHz ELRS link
-
-## Resources
-
-- Code: TODO_GITHUB_REPO_URL
-- Demo video: TODO_DEMO_URL

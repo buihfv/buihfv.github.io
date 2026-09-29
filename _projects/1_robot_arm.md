@@ -46,8 +46,3 @@ TODO — what it replaced, who uses it, what comes next (autonomous replay of de
 ## Skills
 
 LeRobot · computer vision · Linux · Python · Autodesk Inventor · 3D printing
-
-## Resources
-
-- Code: TODO_GITHUB_REPO_URL
-- Demo video: on this page

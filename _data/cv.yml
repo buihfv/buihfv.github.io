@@ -1,74 +1,66 @@
 # Web CV, rendered by _pages/cv.md straight from this file.
-# Section order and wording follow CV_v11.docx — keep the two in step.
+# 날짜는 CV(PDF)와 같은 월/연도 형식으로 적는다: "7/2026 – present"
+# 본문 안에는 날짜를 적지 않는다 — 왼쪽 period 칸이 담당한다.
 
 cv:
   name: Youngmin Jo
-  label: Undergraduate Student, Mechanical Engineering
   email: buihfv@sogang.ac.kr
-  location: Seoul, Republic of Korea
+  phone: "+82 10-5137-9209"
+  location: Seoul, South Korea
   image: ""
   summary: >
     Undergraduate researcher at the Materials Design and Process Engineering Laboratory,
-    Sogang University, advised by Prof. Heonjae Jeong. First-principles and machine-learning
-    approaches to thermal and charge transport in disordered and heterogeneous materials,
-    with emphasis on point defects and interfaces.
-
-  social_networks:
-    - network: GitHub
-      username: buihfv
-    - network: LinkedIn
-      username: 영민-조-45a91730a
+    Sogang University, advised by Prof. Heonjae Jeong.
 
   sections:
     Education:
-      # 이 섹션은 studyType = 굵은 첫 줄, institution = 그 아래 회색 줄로 쓴다.
-      # (키 이름과 뜻이 반대지만, 템플릿이 studyType을 제목으로 잡기 때문에 순서를 뒤집으려면 이렇게 넣어야 함)
+      # studyType = 굵은 첫 줄, institution = 둘째 줄, score = 셋째 줄.
+      # url을 넣으면 제목이 링크(와인색)가 되므로 검은 글씨로 두려면 url을 쓰지 않는다.
       - studyType: Sogang University, Seoul, South Korea
         institution: B.S. in Mechanical Engineering, Summa Cum Laude (expected)
-        score: "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
-        period: "24.03 – 27.08"
-        url: https://me.sogang.ac.kr/en
+        score: "Major GPA 4.26 / 4.3, Overall GPA 4.17 / 4.3"
+        period: "3/2024 – 8/2027"
 
-      - studyType: Republic of Korea Army
+      - studyType: Republic of Korea Army, South Korea
         institution: Military Leave of Absence · Chinook Crew Member
-        period: "22.03 – 23.06"
-        location: South Korea
+        period: "3/2022 – 6/2023"
 
     Research Experience:
-      - company: Materials Design and Process Engineering Laboratory, Sogang University, Seoul, South Korea
-        period: "25.12 – present"
-        position: Undergraduate Researcher
+      - position: Undergraduate Researcher
+        company: Materials Design and Process Engineering Laboratory, Sogang University, Seoul, South Korea
+        period: "12/2025 – present"
         summary: "Advised by Prof. Heonjae Jeong."
+
+      # 아래 name은 _research/ 문서의 title과 정확히 같아야 자동으로 링크가 걸린다.
+      - name: Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces
+        period: "7/2026 – present"
+        sub: true
         highlights:
-          # |- 는 줄바꿈을 그대로 살리는 YAML 블록 표기. 제목 줄 뒤에 빈 줄을 두면
-          # 그 아래 "- "들이 하위 불릿으로 렌더링된다. 따옴표는 쓰지 않는다.
-          - |-
-            **Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present)
+          - "Constructed interface structures of Al-, Ga-, Ta-, and Sr+Ta-doped LLZO solid electrolytes with the Li₁₃Si₄ anode and FeF₃ cathode for thermal-battery applications"
+          - "Evaluating the interfacial thermodynamic stability and Li-ion conductivity of each doped LLZO solid electrolyte at these interfaces"
 
-            - Constructed interface structures of Al-, Ga-, Ta-, and Sr+Ta-doped LLZO solid electrolytes with the Li₁₃Si₄ anode and FeF₃ cathode for thermal-battery applications
-            - Evaluating the interfacial thermodynamic stability and Li-ion conductivity of each doped LLZO solid electrolyte at these interfaces
+      - name: Fluoride-Ion Solid Electrolyte Synthesis Toward Inverse-Designed Compositions
+        period: "8/2026 – present"
+        sub: true
+        highlights:
+          - "Benchmarking the group's first experimental workflow by synthesizing β-PbSnF₄ and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions"
 
-          - |-
-            **Fluoride-Ion Solid Electrolyte Synthesis Toward Inverse-Designed Compositions** (8/2026 – present)
-
-            - Benchmarking the group's first experimental workflow by synthesizing β-PbSnF₄ and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions
-
-          - |-
-            **Origin of Negative Photoconductivity in Amorphous ZnON** (2/2026 – 8/2026)
-
-            - Constructed amorphous ZnON (a-ZnON) by replicating the experimental sputtering process, using Gaussian, Packmol, and AIMD simulations with EDS-derived composition data
-            - Performed hybrid DFT (PBE0) calculations on a-ZnON to obtain accurate electronic structures
-            - Identified negative photoconductivity as originating from two coexisting trap channels — N 2p-derived hole localization and low-coordination Zn-derived electron localization — and quantified their trap energies at the valence/conduction band edges
-
+      - name: Origin of Negative Photoconductivity in Amorphous ZnON
+        period: "2/2026 – 8/2026"
+        sub: true
+        highlights:
+          - "Constructed amorphous ZnON (a-ZnON) by replicating the experimental sputtering process, using Gaussian, Packmol, and AIMD simulations with EDS-derived composition data"
+          - "Performed hybrid DFT (PBE0) calculations on a-ZnON to obtain accurate electronic structures"
+          - "Identified negative photoconductivity as originating from two coexisting trap channels — N 2p-derived hole localization and low-coordination Zn-derived electron localization — and quantified their trap energies at the valence/conduction band edges"
 
     In Preparation:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON
-        period: "2/2026 - present"
+        period: "2/2026 – present"
         authors:
           - W. Lee
           - W. Choi
-          - H. Yoo 
-          - Y. Jo
+          - H. Yoo
+          - "**Y. Jo**"
           - M. Heo
           - and H. Jeong
         publisher: "Manuscript in preparation (title TBD)"
@@ -80,37 +72,38 @@ cv:
         keywords: "Python, C, Linux/Bash, REST APIs"
       - name: Engineering & Design
         keywords: "Arduino, MATLAB, AutoCAD, Autodesk Inventor, 3D Printing"
-    
+
     Technical Projects:
+      # name은 _projects/ 문서의 title과 정확히 같아야 자동으로 링크가 걸린다.
       - name: Monitoring and Logging Tools for Multi-Server VASP Calculations
-        period: "26.07 – 26.09"
+        period: "7/2026 – 9/2026"
         highlights:
           - "Developed a Bash resource monitor reporting per-GPU utilization and per-user job allocation on a shared Linux server"
           - "Built job launchers that check GPU/core availability and flag conflicts before VASP runs, now used by the group"
           - "Automated result logging and alerts by parsing VASP outputs for convergence, energy, and run settings, then sending them to Google Sheets and Telegram via REST APIs across three compute servers"
 
       - name: Computational Pre-Screening for Area-Selective ALD
-        period: "26.03 – 26.06"
+        period: "3/2026 – 6/2026"
         summary: "Manufacturing Process — Top 5 report, selected for class presentation"
         highlights:
           - "Investigated area-selective ALD as a bottom-up alternative to top-down etching, where edge placement errors limit 3D transistor patterning"
           - "Proposed VASP-based pre-screening of substrate–inhibitor pairs to cut experimental time and cost, demonstrated with acetylacetone, which adsorbs on Al₂O₃ but not on SiO₂ (hydroxylated slabs)"
 
       - name: Automated Robotic Arm Teleoperation System
-        period: "26.03 – 26.06"
+        period: "3/2026 – 6/2026"
         highlights:
           - "Developed a motion-driven robotic arm system capable of real-time teleoperation, aimed at automating repetitive lab experiments and manual labor tasks"
           - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing traditional hard-coding methods"
 
       - name: Analysis for Aramid-Hybrid CFRP Fishing Rod
-        period: "25.09 – 25.12"
+        period: "9/2025 – 12/2025"
         summary: "Fundamentals of Engineering Materials"
         highlights:
           - "Showed in LS-DYNA that replacing the outermost CFRP ply of a tapered rod tube with aramid (AFRP) increases steel-sphere impact energy absorption by 130% and shifts failure from brittle fragmentation to ductile deformation"
           - "Proposed the CFRP–AFRP hybrid layup, with a TiO₂ UV-protective coating for the aramid, to keep fishing rods reliable in harsh conditions: intense sunlight, salt exposure, and temperature swings"
 
       - name: Weather-Aware Navigation Using Estimated Arrival Times
-        period: "25.08 – 25.12"
+        period: "8/2025 – 12/2025"
         summary: "C Programming Basic"
         highlights:
           - "Built a C navigation tool that estimates when a driver will reach each point on a route and shows the weather forecast for that point at that time, rather than a single snapshot at departure"
@@ -120,124 +113,110 @@ cv:
       - period: "2027 Spring"
         status: "planned"
         courses:
-          - Semiconductor Engineering
-          - Continuum Mechanics
+          - Capstone Design
           - Physical Electronics II
-          - Creative Capstone Design(Capstone Design)
-          - solid-state physics I
-          - Statistical Thermodynamics and Microscale Heat Transfer
+          - MEMS Design and Fabrication
+          - Continuum Mechanics
+          - Semiconductor Engineering
 
       - period: "2026 Fall"
         status: "ongoing"
         courses:
-          - Research Project I
           - Design of Experiments and Statistical Analysis
           - Physical Electronics I
-          - Design Methodology(Capstone Design)
           - Numerical Analysis
-          - Mechanical Engineering Experiments I
+          - Design Methodology
+          - Mechanical Engineering Laboratory I
+          - Mechatronics
 
       - period: "2026 Spring"
         courses:
-          - Research Project II (A+)
-          - Heat and Mass Transfer (A+)
-          - Manufacturing Process (A+)
-          - Introduction to Composite Materials (A+)
-          - Automatic Control (A+)
-          - Refrigeration and Air-conditioning (A+)
+          - Manufacturing Process
+          - Automatic Control
+          - Heat Transfer
+          - Refrigeration and Air Conditioning
+          - Introduction to Composite Materials
+          - Research Project II
 
       - period: "2025 Fall"
         courses:
-          - Fluid Mechanics I (A+)
-          - Dynamics (A+)
-          - Fundamentals of Engineering Materials (A+)
-          - C Programming Basic (A+)
-          - Engineering Mathematics II (A+)
-          - Introduction to Linear Algebra (A+)
-          
+          - Engineering Mathematics II
+          - Fluid Mechanics I
+          - Dynamics
+          - Fundamentals of Engineering Materials
+          - Linear Algebra
+          - C Programming Basic
+
       - period: "2025 Spring"
         courses:
-          - Solid Mechanics (A0)
-          - Engineering Mathematics I (A+)
-          - Thermodynamics I (A+)
-          - Machine Production Practice (A0)
-          - CAD (A+)
-          
+          - Engineering Mathematics I
+          - Solid Mechanics
+          - Thermodynamics I
+          - Machine Production Practice
+          - Computer-Aided Design
 
       - period: "2024 Fall"
         courses:
-          - Introduction to Engineering Design (A+)
-          - General Physics II (+ lab) (A+)
-          - Analytic Geometry and Calculus II (A+)
+          - Introduction to Engineering Design
+          - General Physics II (+ lab)
+          - Calculus II
 
       - period: "2024 Spring"
         courses:
-          - General Chemistry I (A+)
-          - Introduction to AI Programing (B+)
-          - General Physics I (+ lab) (A+)
-          - Analytic Geometry and Calculus I (A+)
+          - General Chemistry I
+          - Introduction to AI Programming
+          - General Physics I (+ lab) (A0)
+          - Calculus I
 
     Awards & Scholarships:
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "Spring 2026"
-        awarder: Sogang University
-
-      - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: " Fall 2025"
+        period: "Spring 2026, Fall 2025"
         awarder: Sogang University
 
       - title: Encouragement Prize, 11th DB GAPS Investment Competition
-        period: "25.10"
+        period: "10/2025"
         awarder: DB Financial Investment
 
       - title: Best Team Award, DS Division
-        period: "25.08"
+        period: "8/2025"
         awarder: Samsung Electronics, South Korea
 
       - title: Ilju Academy and Culture Foundation Scholarship
-        period: "25.08 – 27.12"
+        period: "8/2025 – 12/2027"
         awarder: Taekwang Group, South Korea
 
       - title: Alumni Association Scholarship
-        period: "25.03"
+        period: "3/2025"
         awarder: Sogang University
 
     Leadership Experience:
       - company: MECHA, Mechanical Engineering Society, Sogang University
-        period: "24.03 – 27.06"
+        period: "3/2024 – 6/2027"
         position: President (previously Vice President, Executive Committee Member)
         highlights:
-          - "Direct engineering projects and manage a technical collaboration with Taejin Technology (HTC KOREA)"
+          - "Direct member engineering projects and manage a technical collaboration with Taejin Technology (HTC KOREA)"
 
       - company: Samsung Electronics, South Korea
-        period: "25.08"
+        period: "8/2025"
         position: Team Leader, Samsung Shining Star 2025
         highlights:
           - "Led a project team through a training program focused on semiconductor foundry processes and the eight major fabrication steps, and presented the team's final project"
 
     Teaching & Outreach:
       - company: Local Children's Center, South Korea
-        period: "25.09 – 27.06"
+        period: "9/2025 – 6/2027"
         position: English Tutor (Volunteer)
         highlights:
           - "Deliver biweekly English lesson plans and academic mentorship to five middle school students"
 
       - company: MECHA, Sogang University
-        period: "26.03"
+        period: "3/2026, 5/2025"
         position: Technical Seminar Instructor
         highlights:
-          - "Designed and delivered a seminar on Arduino-based hardware prototyping"
-
-      - company: MECHA, Sogang University
-        period: "25.05"
-        position: Technical Seminar Instructor
-        highlights:
-          - "Designed and delivered a seminar on 3D modeling and printing"
+          - "Designed and delivered a seminar on Arduino-based hardware prototyping, 3D modeling and printing"
 
       - company: AIESEC in FHCMC, Vietnam
-        period: "24.12 – 25.02"
+        period: "12/2024 – 2/2025"
         position: Global Volunteer (Exchange Participant)
         highlights:
           - "Taught English to secondary students and facilitated Korean language and cultural exchange sessions for university students over 210 hours of service"
-
-    

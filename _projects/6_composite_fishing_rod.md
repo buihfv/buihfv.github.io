@@ -113,8 +113,3 @@ For a rod held in the hand, that is the difference between a failure and an inju
 ## Skills
 
 LS-DYNA (explicit impact, `*PART_COMPOSITE`, Chang–Chang failure, element erosion) · composite laminate design · CFRP/AFRP material selection
-
-## Resources
-
-- Final report: TODO_LINK
-- Presentation slides: TODO_LINK
