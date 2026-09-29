@@ -7,7 +7,7 @@ nav_order: 4
 ---
 
 {% assign cv = site.data.cv.cv %}
-{% assign order = "Education,Research Experience,Publications,Technical Projects,Coursework,Awards & Scholarships,Leadership Experience,Teaching & Outreach,Technical Skills" | split: "," %}
+{% assign order = "Education,Research Experience,Publications,In Preparation,Technical Projects,Coursework,Awards & Scholarships,Leadership Experience,Teaching & Outreach,Technical Skills" | split: "," %}
 
 <div class="cv-page">
 

@@ -21,18 +21,28 @@ cv:
 
   sections:
     Education:
+      - institution: Sogang University
+        period: "24.03 – 27.08"
+        location: Seoul, South Korea
+        url: https://me.sogang.ac.kr/en
+        area: Mechanical Engineering
+        studyType: B.S. in Mechanical Engineering, Summa Cum Laude (expected)
+        score: "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
+
+    Education:
       # 이 섹션은 studyType = 굵은 첫 줄, institution = 그 아래 회색 줄로 쓴다.
       # (키 이름과 뜻이 반대지만, 템플릿이 studyType을 제목으로 잡기 때문에 순서를 뒤집으려면 이렇게 넣어야 함)
       - studyType: Sogang University, Seoul, South Korea
         institution: B.S. in Mechanical Engineering, Summa Cum Laude (expected)
-        score: "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
+          "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
         period: "24.03 – 27.08"
         url: https://me.sogang.ac.kr/en
+        
 
       - studyType: Republic of Korea Army
         institution: Military Leave of Absence · Chinook Crew Member
         period: "22.03 – 23.06"
-        location: South Korea
+
 
     Research Experience:
       - company: Materials Design and Process Engineering Laboratory, Sogang University, Seoul, South Korea
@@ -40,26 +50,17 @@ cv:
         position: Undergraduate Researcher
         summary: "Advised by Prof. Heonjae Jeong."
         highlights:
-          # |- 는 줄바꿈을 그대로 살리는 YAML 블록 표기. 제목 줄 뒤에 빈 줄을 두면
-          # 그 아래 "- "들이 하위 불릿으로 렌더링된다. 따옴표는 쓰지 않는다.
-          - |-
-            **Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present)
+          - "**Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present) 
+           Constructed interface structures of Al-, Ga-, Ta-, and Sr+Ta-doped LLZO solid electrolytes with the Li₁₃Si₄ anode and FeF₃ cathode for thermal-battery applications
+           Evaluating the interfacial thermodynamic stability and Li-ion conductivity of each doped LLZO solid electrolyte at these interfaces"
 
-            - Constructed interface structures of Al-, Ga-, Ta-, and Sr+Ta-doped LLZO solid electrolytes with the Li₁₃Si₄ anode and FeF₃ cathode for thermal-battery applications
-            - Evaluating the interfacial thermodynamic stability and Li-ion conductivity of each doped LLZO solid electrolyte at these interfaces
-
-          - |-
-            **Fluoride-Ion Solid Electrolyte Synthesis Toward Inverse-Designed Compositions** (8/2026 – present)
-
-            - Benchmarking the group's first experimental workflow by synthesizing β-PbSnF₄ and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions
-
-          - |-
-            **Origin of Negative Photoconductivity in Amorphous ZnON** (2/2026 – 8/2026)
-
-            - Constructed amorphous ZnON (a-ZnON) by replicating the experimental sputtering process, using Gaussian, Packmol, and AIMD simulations with EDS-derived composition data
-            - Performed hybrid DFT (PBE0) calculations on a-ZnON to obtain accurate electronic structures
-            - Identified negative photoconductivity as originating from two coexisting trap channels — N 2p-derived hole localization and low-coordination Zn-derived electron localization — and quantified their trap energies at the valence/conduction band edges
-
+          - "**Fluoride-Ion Solid Electrolyte Synthesis Toward Inverse-Designed Compositions** (8/2026 – present) 
+           Benchmarking the group's first experimental workflow by synthesizing β-PbSnF4 and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions
+          
+          - "**Origin of Negative Photoconductivity in Amorphous ZnON ** (2/2026 – 8/2026) 
+           Constructed amorphous ZnON (a-ZnON) by replicating the experimental sputtering process, using Gaussian, Packmol, and AIMD simulations with EDS-derived composition data 
+           Performed hybrid DFT (PBE0) calculations on a-ZnON to obtain accurate electronic structures
+           Identified negative photoconductivity as originating from two coexisting trap channels — N 2p-derived hole localization and low-coordination Zn-derived electron localization — and quantified their trap energies at the valence/conduction band edges
 
     In Preparation:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON

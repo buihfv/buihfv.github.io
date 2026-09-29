@@ -24,4 +24,4 @@ __pycache__/
 Claude outputs/
 
 gpu 모니터링 코드/
-website 사진,영상/
+website 사진,영상/*.bak

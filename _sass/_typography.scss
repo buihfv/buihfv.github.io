@@ -894,3 +894,24 @@ footer.sticky-bottom {
     max-width: 440px;
   }
 }
+
+/* ---------- CV highlights with nested sub-bullets ---------- */
+
+.cv-page .cv-highlights > li:has(ul) {
+  list-style: none;
+  margin-left: -1.15rem;
+  margin-bottom: 0.65rem;
+}
+
+.cv-page .cv-highlights ul {
+  margin: 0.3rem 0 0;
+  padding-left: 1.15rem;
+  list-style: disc;
+}
+
+.cv-page .cv-highlights ul li {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+  margin-bottom: 0.15rem;
+}
