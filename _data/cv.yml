@@ -24,129 +24,167 @@ cv:
       - institution: Sogang University
         period: "24.03 – 27.08"
         location: Seoul, South Korea
-        url: https://www.sogang.ac.kr/en/
+        url: https://me.sogang.ac.kr/en
         area: Mechanical Engineering
         studyType: B.S. in Mechanical Engineering, Summa Cum Laude (expected)
         score: "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
 
+    Education:
+      # 이 섹션은 studyType = 굵은 첫 줄, institution = 그 아래 회색 줄로 쓴다.
+      # (키 이름과 뜻이 반대지만, 템플릿이 studyType을 제목으로 잡기 때문에 순서를 뒤집으려면 이렇게 넣어야 함)
+      - studyType: Sogang University, Seoul, South Korea
+        institution: B.S. in Mechanical Engineering, Summa Cum Laude (expected)
+          "Major GPA 4.26 / 4.3 · Overall GPA 4.17 / 4.3"
+        period: "24.03 – 27.08"
+        url: https://me.sogang.ac.kr/en
+        
+
+      - studyType: Republic of Korea Army
+        institution: Military Leave of Absence · Chinook Crew Member
+        period: "22.03 – 23.06"
+
+
     Research Experience:
-      - company: Materials Design and Process Engineering Laboratory, Sogang University
+      - company: Materials Design and Process Engineering Laboratory, Sogang University, Seoul, South Korea
         period: "25.12 – present"
         position: Undergraduate Researcher
-        location: Seoul, South Korea
         summary: "Advised by Prof. Heonjae Jeong."
         highlights:
-          - "**Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present) — evaluating interfacial thermodynamic stability and Li-ion conductivity of Al-, Ga-, Ta- and Sr+Ta-doped LLZO solid electrolytes at the Li₁₃Si₄ anode and FeF₃ cathode interfaces for thermal-battery applications; assessing dopant-dependent interfacial phase stability and Li-ion transport under realistic operating conditions (500 °C) using first-principles calculations and a machine learning interatomic potential (MLIP)."
-          - "**Synthesis of Fluoride-Ion Solid Electrolytes Derived from Inverse Design** (8/2026 – present) — benchmarking the group's first experimental workflow by synthesizing β-PbSnF₄ and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions."
-          - "**Origin of Negative Photoconductivity in Amorphous ZnON** (2/2026 – 8/2026) — performed hybrid DFT (PBE0) and AIMD calculations on amorphous ZnON to determine the origin of negative photoconductivity; traced it to two coexisting trap channels, N 2p-derived hole localization and low-coordination Zn-derived electron localization, and quantified their trap energies at the valence and conduction band edges."
+          - "**Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces** (7/2026 – present) 
+           Constructed interface structures of Al-, Ga-, Ta-, and Sr+Ta-doped LLZO solid electrolytes with the Li₁₃Si₄ anode and FeF₃ cathode for thermal-battery applications
+           Evaluating the interfacial thermodynamic stability and Li-ion conductivity of each doped LLZO solid electrolyte at these interfaces"
 
-    Publications:
+          - "**Fluoride-Ion Solid Electrolyte Synthesis Toward Inverse-Designed Compositions** (8/2026 – present) 
+           Benchmarking the group's first experimental workflow by synthesizing β-PbSnF4 and validating its ionic conductivity against reference values before attempting inverse-design candidate compositions
+          
+          - "**Origin of Negative Photoconductivity in Amorphous ZnON ** (2/2026 – 8/2026) 
+           Constructed amorphous ZnON (a-ZnON) by replicating the experimental sputtering process, using Gaussian, Packmol, and AIMD simulations with EDS-derived composition data 
+           Performed hybrid DFT (PBE0) calculations on a-ZnON to obtain accurate electronic structures
+           Identified negative photoconductivity as originating from two coexisting trap channels — N 2p-derived hole localization and low-coordination Zn-derived electron localization — and quantified their trap energies at the valence/conduction band edges
+
+    In Preparation:
       - title: Origin of Negative Photoconductivity in Amorphous ZnON
-        period: "In preparation"
+        period: "2/2026 - present"
         authors:
+          - W. Lee
+          - W. Choi
+          - H. Yoo 
           - Y. Jo
           - M. Heo
-          - H. Jeong
-          - et al.
-        publisher: "Manuscript in preparation (working title)"
+          - and H. Jeong
+        publisher: "Manuscript in preparation (title TBD)"
 
+    Technical Skills:
+      - name: Computational Materials Design
+        keywords: "VASP, Gaussian, Pymatgen, ASE, Avogadro"
+      - name: Programming & Systems
+        keywords: "Python, C, Linux/Bash, REST APIs"
+      - name: Engineering & Design
+        keywords: "Arduino, MATLAB, AutoCAD, Autodesk Inventor, 3D Printing"
+    
     Technical Projects:
       - name: Monitoring and Logging Tools for Multi-Server VASP Calculations
         period: "26.07 – 26.09"
         highlights:
-          - "Developed a Bash resource monitor reporting per-GPU utilization and per-user job allocation on a shared Linux server."
-          - "Built job launchers that check GPU/core availability and flag conflicts before VASP runs, now used by the group."
-          - "Automated result logging and alerts by parsing VASP outputs for convergence, energy, and run settings, then sending them to Google Sheets and Telegram via REST APIs across three compute servers."
+          - "Developed a Bash resource monitor reporting per-GPU utilization and per-user job allocation on a shared Linux server"
+          - "Built job launchers that check GPU/core availability and flag conflicts before VASP runs, now used by the group"
+          - "Automated result logging and alerts by parsing VASP outputs for convergence, energy, and run settings, then sending them to Google Sheets and Telegram via REST APIs across three compute servers"
 
       - name: Computational Pre-Screening for Area-Selective ALD
         period: "26.03 – 26.06"
         summary: "Manufacturing Process — Top 5 report, selected for class presentation"
         highlights:
-          - "Investigated area-selective ALD as a bottom-up alternative to top-down etching, where edge placement errors limit 3D transistor patterning."
-          - "Proposed VASP-based pre-screening of substrate–inhibitor pairs to cut experimental time and cost, demonstrated with acetylacetone, which adsorbs on Al₂O₃ but not on SiO₂ (hydroxylated slabs)."
+          - "Investigated area-selective ALD as a bottom-up alternative to top-down etching, where edge placement errors limit 3D transistor patterning"
+          - "Proposed VASP-based pre-screening of substrate–inhibitor pairs to cut experimental time and cost, demonstrated with acetylacetone, which adsorbs on Al₂O₃ but not on SiO₂ (hydroxylated slabs)"
 
       - name: Automated Robotic Arm Teleoperation System
         period: "26.03 – 26.06"
         highlights:
-          - "Developed a motion-driven robotic arm system capable of real-time teleoperation, aimed at automating repetitive lab experiments and manual labor tasks."
-          - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing traditional hard-coding methods."
+          - "Developed a motion-driven robotic arm system capable of real-time teleoperation, aimed at automating repetitive lab experiments and manual labor tasks"
+          - "Streamlined the motor control and teleoperation pipeline by integrating the LeRobot package, replacing traditional hard-coding methods"
 
       - name: Analysis for Aramid-Hybrid CFRP Fishing Rod
         period: "25.09 – 25.12"
         summary: "Fundamentals of Engineering Materials"
         highlights:
-          - "Showed in LS-DYNA that replacing the outermost CFRP ply of a tapered rod tube with aramid (AFRP) increases steel-sphere impact energy absorption by 130% and shifts failure from brittle fragmentation to ductile deformation."
-          - "Proposed the CFRP–AFRP hybrid layup, with a TiO₂ UV-protective coating for the aramid, to keep fishing rods reliable in harsh conditions: intense sunlight, salt exposure, and temperature swings."
+          - "Showed in LS-DYNA that replacing the outermost CFRP ply of a tapered rod tube with aramid (AFRP) increases steel-sphere impact energy absorption by 130% and shifts failure from brittle fragmentation to ductile deformation"
+          - "Proposed the CFRP–AFRP hybrid layup, with a TiO₂ UV-protective coating for the aramid, to keep fishing rods reliable in harsh conditions: intense sunlight, salt exposure, and temperature swings"
 
       - name: Weather-Aware Navigation Using Estimated Arrival Times
         period: "25.08 – 25.12"
         summary: "C Programming Basic"
         highlights:
-          - "Built a C navigation tool that estimates when a driver will reach each point on a route and shows the weather forecast for that point at that time, rather than a single snapshot at departure."
-          - "Integrated navigation, map, and Korea Meteorological Administration forecast APIs, matching estimated arrival times to hourly forecasts and sampling weather every 5 km along the route on an interactive map."
+          - "Built a C navigation tool that estimates when a driver will reach each point on a route and shows the weather forecast for that point at that time, rather than a single snapshot at departure"
+          - "Integrated navigation, map, and Korea Meteorological Administration forecast APIs, matching estimated arrival times to hourly forecasts and sampling weather every 5 km along the route on an interactive map"
 
     Coursework:
       - period: "2027 Spring"
         status: "planned"
         courses:
-          - Capstone Design
-          - Physical Electronics II
-          - MEMS Design and Fabrication
-          - Continuum Mechanics
           - Semiconductor Engineering
+          - Continuum Mechanics
+          - Physical Electronics II
+          - Creative Capstone Design(Capstone Design)
+          - solid-state physics I
+          - Statistical Thermodynamics and Microscale Heat Transfer
 
       - period: "2026 Fall"
         status: "ongoing"
         courses:
+          - Research Project I
           - Design of Experiments and Statistical Analysis
           - Physical Electronics I
+          - Design Methodology(Capstone Design)
           - Numerical Analysis
-          - Design Methodology
-          - Mechanical Engineering Laboratory I
-          - Mechatronics
+          - Mechanical Engineering Experiments I
 
       - period: "2026 Spring"
         courses:
-          - Manufacturing Process
-          - Automatic Control
-          - Heat Transfer
-          - Refrigeration and Air Conditioning
-          - Introduction to Composite Materials
-          - Research Project II
+          - Research Project II (A+)
+          - Heat and Mass Transfer (A+)
+          - Manufacturing Process (A+)
+          - Introduction to Composite Materials (A+)
+          - Automatic Control (A+)
+          - Refrigeration and Air-conditioning (A+)
 
       - period: "2025 Fall"
         courses:
-          - Engineering Mathematics II
-          - Fluid Mechanics I
-          - Dynamics
-          - Fundamentals of Engineering Materials
-          - Linear Algebra
-          - C Programming Basic
-
+          - Fluid Mechanics I (A+)
+          - Dynamics (A+)
+          - Fundamentals of Engineering Materials (A+)
+          - C Programming Basic (A+)
+          - Engineering Mathematics II (A+)
+          - Introduction to Linear Algebra (A+)
+          
       - period: "2025 Spring"
         courses:
-          - Engineering Mathematics I
-          - Solid Mechanics
-          - Thermodynamics I
-          - Machine Production Practice
-          - Computer-Aided Design
+          - Solid Mechanics (A0)
+          - Engineering Mathematics I (A+)
+          - Thermodynamics I (A+)
+          - Machine Production Practice (A0)
+          - CAD (A+)
+          
 
       - period: "2024 Fall"
         courses:
-          - Introduction to Engineering Design
-          - General Physics II (+ lab)
-          - Calculus II
+          - Introduction to Engineering Design (A+)
+          - General Physics II (+ lab) (A+)
+          - Analytic Geometry and Calculus II (A+)
 
       - period: "2024 Spring"
         courses:
-          - General Chemistry I
-          - Introduction to AI Programming
-          - General Physics I (+ lab)
-          - Calculus I
+          - General Chemistry I (A+)
+          - Introduction to AI Programing (B+)
+          - General Physics I (+ lab) (A+)
+          - Analytic Geometry and Calculus I (A+)
 
     Awards & Scholarships:
       - title: President's Award & Dean's List with Highest Honors (Top 1%)
-        period: "Spring 2026, Fall 2025"
+        period: "Spring 2026"
+        awarder: Sogang University
+
+      - title: President's Award & Dean's List with Highest Honors (Top 1%)
+        period: " Fall 2025"
         awarder: Sogang University
 
       - title: Encouragement Prize, 11th DB GAPS Investment Competition
@@ -170,37 +208,37 @@ cv:
         period: "24.03 – 27.06"
         position: President (previously Vice President, Executive Committee Member)
         highlights:
-          - "Direct member engineering projects and manage a technical collaboration with Taejin Technology (HTC KOREA)."
+          - "Direct engineering projects and manage a technical collaboration with Taejin Technology (HTC KOREA)"
 
       - company: Samsung Electronics, South Korea
         period: "25.08"
         position: Team Leader, Samsung Shining Star 2025
         highlights:
-          - "Led a project team through a training program focused on semiconductor foundry processes and the eight major fabrication steps, and presented the team's final project."
+          - "Led a project team through a training program focused on semiconductor foundry processes and the eight major fabrication steps, and presented the team's final project"
 
     Teaching & Outreach:
       - company: Local Children's Center, South Korea
         period: "25.09 – 27.06"
         position: English Tutor (Volunteer)
         highlights:
-          - "Deliver biweekly English lesson plans and academic mentorship to five middle school students."
+          - "Deliver biweekly English lesson plans and academic mentorship to five middle school students"
 
       - company: MECHA, Sogang University
-        period: "26.03, 25.05"
+        period: "26.03"
         position: Technical Seminar Instructor
         highlights:
-          - "Designed and delivered a seminar on Arduino-based hardware prototyping, 3D modeling and printing."
+          - "Designed and delivered a seminar on Arduino-based hardware prototyping"
+
+      - company: MECHA, Sogang University
+        period: "25.05"
+        position: Technical Seminar Instructor
+        highlights:
+          - "Designed and delivered a seminar on 3D modeling and printing"
 
       - company: AIESEC in FHCMC, Vietnam
         period: "24.12 – 25.02"
         position: Global Volunteer (Exchange Participant)
         highlights:
-          - "Taught English to secondary students and facilitated Korean language and cultural exchange sessions for university students over 210 hours of service."
+          - "Taught English to secondary students and facilitated Korean language and cultural exchange sessions for university students over 210 hours of service"
 
-    Technical Skills:
-      - name: Computational Materials Design
-        keywords: "VASP, Gaussian, Pymatgen, ASE, Avogadro"
-      - name: Programming & Systems
-        keywords: "Python, C, Linux/Bash, REST APIs"
-      - name: Engineering & Design
-        keywords: "Arduino, MATLAB, AutoCAD, Autodesk Inventor, 3D Printing"
+    
