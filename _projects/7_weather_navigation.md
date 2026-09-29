@@ -82,7 +82,7 @@ input                                     and travel time     per-time forecast 
   <figcaption>Generated output: the route sampled every 5 km, each marker carrying the forecast for its own arrival time.</figcaption>
 </figure>
 <figure>
-  <video controls playsinline preload="metadata" muted poster="{{ '/assets/img/nav_demo_poster.jpg' | relative_url }}">
+  <video controls playsinline preload="metadata" poster="{{ '/assets/img/nav_demo_poster.jpg' | relative_url }}">
     <source src="{{ '/assets/video/nav_demo.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video.
   </video>

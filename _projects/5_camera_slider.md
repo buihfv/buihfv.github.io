@@ -55,14 +55,14 @@ A tracking shot needs motion that is slow, even and repeatable — which is what
 <div class="media-row media-wide">
 <div class="media-col">
 <figure>
-  <video controls playsinline preload="metadata" muted poster="{{ '/assets/img/slider_motion_1_poster.jpg' | relative_url }}">
+  <video controls playsinline preload="metadata" poster="{{ '/assets/img/slider_motion_1_poster.jpg' | relative_url }}">
     <source src="{{ '/assets/video/slider_motion_1.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video.
   </video>
   <figcaption>Traverse under Arduino control.</figcaption>
 </figure>
 <figure>
-  <video controls playsinline preload="metadata" muted poster="{{ '/assets/img/slider_motion_2_poster.jpg' | relative_url }}">
+  <video controls playsinline preload="metadata" poster="{{ '/assets/img/slider_motion_2_poster.jpg' | relative_url }}">
     <source src="{{ '/assets/video/slider_motion_2.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video.
   </video>

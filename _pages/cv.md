@@ -4,7 +4,6 @@ permalink: /cv/
 title: CV
 nav: true
 nav_order: 4
-description: Full curriculum vitae. The PDF is the printable version.
 ---
 
 {% assign cv = site.data.cv.cv %}

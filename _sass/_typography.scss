@@ -1040,3 +1040,49 @@ footer.sticky-bottom {
   line-height: 1.5;
   color: var(--global-text-color-light);
 }
+
+/* ---------- gallery page ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.9rem 1.5rem;
+  align-items: start;
+  margin-top: 1.9rem;
+}
+
+.gallery-item {
+  margin: 0;
+}
+
+.gallery-item img,
+.gallery-item video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--global-divider-color);
+}
+
+.gallery-item video {
+  background: #000;
+}
+
+.gallery-item figcaption {
+  margin-top: 0.45rem;
+  font-size: 0.87rem;
+  line-height: 1.45;
+  color: var(--global-text-color-light);
+}
+
+.gallery-item .gallery-date {
+  margin-left: 0.45rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.65;
+}
+
+@media (max-width: 620px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+}
