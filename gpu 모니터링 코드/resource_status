@@ -1,0 +1,110 @@
+#!/bin/bash
+# resource_status
+# GPU + CPU 사용 현황을 한 번에 보여줍니다. (사용자별로 묶어서 표시)
+
+GPU_THRESHOLD_MB=15000
+CPU_BUILD_PATTERN="/home1/irteam/data-vol1/vasp/vasp.6.6.0/bin"
+
+# /home1/irteam/<user>/... 패턴에서 사용자명 추출
+extract_user() {
+  echo "$1" | awk -F'/' '
+    { for(i=1;i<=NF;i++) if($i=="irteam" && (i+1)<=NF) { print $(i+1); found=1; exit } }
+    found==0 { print "(알수없음)" }
+  '
+}
+
+##############################################
+# 1. GPU 사용 현황
+##############################################
+echo "################# GPU 사용 현황 #################"
+echo ""
+echo "--- GPU별 연산 사용률 + 여유 메모리 (여유 기준: ${GPU_THRESHOLD_MB}MB) ---"
+printf "%-4s %-8s %-12s %-12s %-10s\n" "GPU" "사용률" "FREE(MiB)" "TOTAL(MiB)" "STATUS"
+nvidia-smi --query-gpu=index,utilization.gpu,memory.free,memory.total --format=csv,noheader,nounits \
+  | awk -F', ' -v t="$GPU_THRESHOLD_MB" '{
+      status = ($3>=t) ? "충분 (OK)" : "부족 (X)"
+      printf "%-4s %-8s %-12s %-12s %-10s\n", $1, $2"%", $3, $4, status
+    }'
+
+echo ""
+echo "--- 사용자별 할당 목록 ---"
+
+GPU_RAW=/tmp/rs_gpu_$$.txt
+> "$GPU_RAW"
+nvidia-smi --query-compute-apps=pid,used_memory,gpu_uuid --format=csv,noheader | while IFS=',' read -r pid mem uuid; do
+  pid=$(echo "$pid" | xargs); mem=$(echo "$mem" | xargs); uuid=$(echo "$uuid" | xargs)
+  idx=$(nvidia-smi --query-gpu=index,uuid --format=csv,noheader | awk -F', ' -v u="$uuid" '$2==u{print $1}')
+  dir=$(readlink -f "/proc/$pid/cwd" 2>/dev/null)
+  user=$(extract_user "$dir")
+  echo "${user}|${idx}|${pid}|${mem}|${dir}" >> "$GPU_RAW"
+done
+
+if [ -s "$GPU_RAW" ]; then
+  cut -d'|' -f1 "$GPU_RAW" | sort -u | while read -r user; do
+    echo ""
+    echo "== $user =="
+    # 이 사용자의 각 DIR(계산 경로)별로 그룹핑 -> 그 계산에 할당된 GPU들을 한데 모아 표시
+    grep "^${user}|" "$GPU_RAW" | awk -F'|' '{print $5}' | sort -u | while read -r dir; do
+      lines=$(grep "^${user}|" "$GPU_RAW" | awk -F'|' -v d="$dir" '$5==d')
+      gpu_list=$(echo "$lines" | awk -F'|' '{print $2}' | sort -un | paste -sd' ' -)
+      gpu_count=$(echo "$lines" | wc -l)
+      echo "  [$dir] (GPU ${gpu_count}개: $gpu_list)"
+      echo "$lines" | sort -t'|' -k2,2n | awk -F'|' '{printf "      GPU=%-3s PID=%-8s MEM=%s\n", $2, $3, $4}'
+    done
+  done
+else
+  echo "(GPU 사용 중인 프로세스 없음)"
+fi
+rm -f "$GPU_RAW"
+
+echo ""
+echo ""
+
+##############################################
+# 2. CPU 사용 현황
+##############################################
+echo "################# CPU 사용 현황 #################"
+echo ""
+
+TOTAL_CORES=$(nproc --all)
+IDLE_PCT=$(top -bn2 -d 1 | awk -F',' '/Cpu\(s\)/ {for(i=1;i<=NF;i++) if ($i ~ /id/) {gsub(/[^0-9.]/,"",$i); print $i}}' | tail -1)
+IDLE_CORES=$(awk -v t="$TOTAL_CORES" -v p="$IDLE_PCT" 'BEGIN{printf "%d", t*p/100}')
+echo "사용 가능 CPU: ${IDLE_CORES}/${TOTAL_CORES}"
+echo ""
+
+echo "--- 사용자별 CPU 할당 목록 (경로별 요약, GPU 보조용 스레드 제외) ---"
+
+CPU_RAW=/tmp/rs_cpu_$$.txt
+> "$CPU_RAW"
+ps -eo pid,ppid,cmd | grep "$CPU_BUILD_PATTERN" | grep -v grep | awk '{print $1, $2}' | while read -r pid ppid; do
+  cwd=$(readlink -f "/proc/$pid/cwd" 2>/dev/null)
+  user=$(extract_user "$cwd")
+  start=$(ps -p "$pid" -o lstart= 2>/dev/null | sed 's/^ *//')
+  etime=$(ps -p "$pid" -o etime= 2>/dev/null | sed 's/^ *//')
+  echo "${user}|${cwd}|${start}|${etime}|${ppid}" >> "$CPU_RAW"
+done
+
+if [ -s "$CPU_RAW" ]; then
+  cut -d'|' -f1 "$CPU_RAW" | sort -u | while read -r user; do
+    echo ""
+    echo "== $user =="
+    # 이 사용자의 각 DIR(경로)별로 그룹핑: 개수/부모PID/START/ELAPSED(대표값)/DIR 한 줄 요약
+    grep "^${user}|" "$CPU_RAW" | awk -F'|' '{print $2}' | sort -u | while read -r dir; do
+      lines=$(grep "^${user}|${dir}|" "$CPU_RAW")
+      cnt=$(echo "$lines" | wc -l)
+      rep_start=$(echo "$lines" | head -1 | awk -F'|' '{print $3}')
+      rep_etime=$(echo "$lines" | head -1 | awk -F'|' '{print $4}')
+      rep_ppid=$(echo "$lines" | awk -F'|' '{print $5}' | sort | uniq -c | sort -rn | head -1 | awk '{print $2}')
+      printf "  CPU=%-4s개  부모PID=%-8s  START=%-25s  ELAPSED=%-12s  DIR=%s\n" "$cnt" "$rep_ppid" "$rep_start" "$rep_etime" "$dir"
+    done
+  done
+else
+  echo "(현재 실행 중인 CPU 전용 VASP job 없음)"
+fi
+rm -f "$CPU_RAW"
+
+echo ""
+echo "################# 종료 방법 #################"
+echo "GPU job: 위 PID를 'ls -l /proc/<PID>/cwd'로 확인 후 kill <PID>"
+echo "CPU job(mpirun 자식들): 위에 표시된 부모PID를 그대로 kill하면 그 경로의 rank들이 모두 같이 종료됩니다. (예: kill <부모PID>)"
+echo "※ pkill -f 등 넓은 패턴 매치는 절대 사용하지 마세요 (다른 job과 경로 문자열이 겹칠 수 있습니다)."

@@ -1,0 +1,145 @@
+#!/bin/bash
+# cpu_run (공용 버전 - 텔레그램/구글시트 알림 연동 없음)
+# vasp-mlff-0 서버의 유휴 CPU 코어로 VASP(CPU 빌드)를 제출합니다.
+#
+# 사용법: cpu_run [vasp_std|vasp_gam|vasp_ncl] [-np N]
+#   예) cpu_run vasp_gam -np 16
+#       cpu_run -np 32          (모델 생략 시 vasp_std)
+#
+# 주의: hbkim 계정의 conda 환경(CPU 전용 VASP 빌드 + 라이브러리 세트)에 의존합니다.
+# 이 환경이 사라지면 이 스크립트도 작동하지 않습니다.
+
+VASP_CPU_BINDIR="/home1/irteam/data-vol1/vasp/vasp.6.6.0/bin"
+CONDA_ENV="/home1/irteam/hbkim/vasp"
+
+IDLE_THRESHOLD_PCT=20   # 이 값(%) 이상 idle인 코어만 "여유 코어"로 간주
+NP=32                   # 기본 MPI rank(코어) 개수
+VASP_MODEL="vasp_std"   # 기본값. vasp_std / vasp_gam / vasp_ncl 중 선택 가능
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -np) NP="$2"; shift 2 ;;
+    vasp_std|vasp_gam|vasp_ncl) VASP_MODEL="$1"; shift ;;
+    *) shift ;;
+  esac
+done
+
+VASP_BIN_CPU="$VASP_CPU_BINDIR/$VASP_MODEL"
+
+echo "선택된 VASP 모델: $VASP_MODEL"
+echo "요청 CPU 코어 개수: $NP"
+echo ""
+
+if [ ! -f "$VASP_BIN_CPU" ]; then
+  echo "오류: CPU 전용 VASP 바이너리를 찾을 수 없습니다: $VASP_BIN_CPU"
+  echo "사용 가능한 바이너리 목록:"
+  ls "$VASP_CPU_BINDIR" 2>/dev/null
+  exit 1
+fi
+
+if [ ! -d "$CONDA_ENV" ]; then
+  echo "오류: conda 환경을 찾을 수 없습니다: $CONDA_ENV"
+  exit 1
+fi
+
+TOTAL_CORES=$(nproc --all)
+
+# mpstat으로 코어별 idle% 확인 (sysstat 패키지 필요: mpstat -P ALL 1 1)
+if command -v mpstat >/dev/null 2>&1; then
+  IDLE_CORES=$(mpstat -P ALL 1 1 | awk -v t="$IDLE_THRESHOLD_PCT" \
+    '/Average/ && $2 ~ /^[0-9]+$/ {if ($NF+0 >= t) count++} END {print count+0}')
+else
+  echo "경고: mpstat이 없어 전체 평균 idle%로만 추정합니다 (sysstat 설치 시 코어별 확인 가능)."
+  IDLE_PCT=$(top -bn1 | awk -F',' '/Cpu\(s\)/ {for(i=1;i<=NF;i++) if ($i ~ /id/) {gsub(/[^0-9.]/,"",$i); print $i}}')
+  IDLE_CORES=$(awk -v t="$TOTAL_CORES" -v p="$IDLE_PCT" 'BEGIN{printf "%d", t*p/100}')
+fi
+
+echo "전체 논리 코어 수: $TOTAL_CORES"
+echo "현재 여유 코어(추정): $IDLE_CORES"
+echo "(참고: GPU job들의 CPU 대기 스레드는 idle 계산에서 자동 제외되지 않을 수 있으니, 여유를 두고 요청하세요.)"
+echo ""
+
+if [ "$IDLE_CORES" -lt "$NP" ]; then
+  echo "경고: 요청한 $NP개 중 여유 코어는 약 ${IDLE_CORES}개뿐입니다."
+  echo "계속 진행하면 다른 사용자 job과 경합해 서로 느려질 수 있습니다."
+  read -p "그래도 진행할까요? (y/N): " ans
+  if [[ "$ans" != "y" && "$ans" != "Y" ]]; then
+    echo "취소되었습니다."
+    exit 1
+  fi
+fi
+
+echo ""
+echo "현재 디렉토리: $(pwd)"
+if [ ! -f INCAR ] || [ ! -f POSCAR ] || [ ! -f KPOINTS ]; then
+  echo "경고: 현재 디렉토리에 INCAR/POSCAR/KPOINTS 파일이 없습니다. 위치를 확인하세요."
+  read -p "그래도 진행할까요? (y/N): " ans2
+  if [[ "$ans2" != "y" && "$ans2" != "Y" ]]; then
+    exit 1
+  fi
+fi
+
+JOB_DIR="$(pwd)"
+JOB_LABEL="$(basename "$JOB_DIR")"
+OUT_FILENAME=$(date "+%Y.%m.%d_%H-%M.out")
+
+MPIRUN_BIN="/home1/irteam/hbkim/vasp/bin/mpirun"
+
+nohup bash -c "
+  unset OPAL_PREFIX
+  unset OMPI_MCA_btl OMPI_MCA_pml OMPI_MCA_coll OMPI_MCA_plm_rsh_agent
+  unset LD_PRELOAD
+
+  source \"\$(conda info --base)/etc/profile.d/conda.sh\"
+  conda deactivate 2>/dev/null
+  conda deactivate 2>/dev/null
+  conda activate '$CONDA_ENV'
+
+  export LD_LIBRARY_PATH=/home1/irteam/bin/safe_libs:/home1/irteam/hbkim/vasp/lib:\$LD_LIBRARY_PATH
+  export OMP_NUM_THREADS=1
+
+  '$MPIRUN_BIN' -np $NP '$VASP_BIN_CPU' < /dev/null > '$OUT_FILENAME' 2>&1
+" > /dev/null 2>&1 &
+disown
+sleep 1
+
+echo ""
+echo "제출 완료."
+echo ""
+echo "최근 생성된 출력 파일:"
+ls -t *.out 2>/dev/null | head -1
+echo ""
+
+# 실제 rank 프로세스가 뜰 때까지 잠깐 대기 후 PID/부모(mpirun) PID 수집 (최대 10초, 1초 간격 재시도)
+echo "계산 프로세스 확인 중..."
+JOB_DIR_REAL=$(readlink -f "$JOB_DIR")
+FOUND_LINES=""
+for i in $(seq 1 10); do
+  FOUND_LINES=$(ps -eo pid,ppid,cmd | grep "$VASP_BIN_CPU" | grep -v grep | while read -r pid ppid rest; do
+    cwd=$(readlink -f "/proc/$pid/cwd" 2>/dev/null)
+    [ "$cwd" = "$JOB_DIR_REAL" ] && echo "$pid $ppid"
+  done)
+  [ -n "$FOUND_LINES" ] && break
+  sleep 1
+done
+
+echo ""
+if [ -n "$FOUND_LINES" ]; then
+  PID_LIST=$(echo "$FOUND_LINES" | awk '{print $1}' | paste -sd' ' -)
+  REAL_PPID=$(echo "$FOUND_LINES" | awk '{print $2}' | sort | uniq -c | sort -rn | head -1 | awk '{print $2}')
+  echo "이 계산의 rank PID들: $PID_LIST"
+  echo "부모(mpirun) PID: $REAL_PPID"
+  echo ""
+  echo "종료하려면 부모 PID 하나만 kill하면 됩니다 (자식 rank들도 같이 종료됨):"
+  echo "  kill $REAL_PPID"
+  echo ""
+  echo "혹시 부모를 죽여도 일부 rank가 안 죽으면, 아래로 나머지를 정리하세요:"
+  echo "  kill $PID_LIST"
+else
+  echo "경고: 계산 프로세스를 아직 찾지 못했습니다 (초기 로딩이 오래 걸리는 경우일 수 있음)."
+  echo "잠시 후 아래 명령으로 직접 확인하세요:"
+  echo "  ps -eo pid,ppid,cmd | grep '$VASP_BIN_CPU' | grep -v grep"
+  echo "  → 나온 PID들을 'ls -l /proc/<PID>/cwd' 로 이 디렉토리인지 확인 후 kill <부모PID>"
+fi
+echo ""
+echo "※ pkill -f 등 넓은 패턴 매치는 절대 사용하지 마세요 (다른 job과 경로 문자열이 겹칠 수 있습니다)."
