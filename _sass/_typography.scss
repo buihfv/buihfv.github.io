@@ -1086,3 +1086,28 @@ footer.sticky-bottom {
     gap: 1.4rem;
   }
 }
+
+/* 두 장을 한 줄에 나란히 (비교용) */
+.gallery-item.gallery-pair {
+  grid-column: 1 / -1;
+}
+
+.gallery-pair .gallery-pair-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.gallery-pair .gallery-pair-inner img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  background: var(--global-bg-color);
+}
+
+@media (max-width: 620px) {
+  .gallery-pair .gallery-pair-inner {
+    gap: 0.9rem;
+  }
+}

@@ -13,41 +13,34 @@ description: Things I make, ride and photograph when I am not in front of a term
 #   영상:  - src: assets/video/gallery/파일명.mp4
 #            poster: assets/img/gallery/파일명-poster.jpg
 #            date: ...
+#   두 장 나란히:
+#          - pair:
+#              - src: 왼쪽.jpg
+#              - src: 오른쪽.jpg
+#            date: ...
 #   .mp4 로 끝나면 자동으로 플레이어로 그려진다.
-#   지우고 싶은 항목은 그 덩어리(2~4줄)를 통째로 지우면 된다.
+#   지우고 싶은 항목은 그 덩어리를 통째로 지우면 된다.
 #   목록 순서가 그대로 화면 순서. 지금은 최신 것이 맨 위.
 # ===========================================================================
 photos:
   - src: assets/img/gallery/2026-09-29-1225.jpg
     date: 2026-09-29
 
-  - src: assets/img/gallery/2026-09-29-1224-2.jpg
+  - src: assets/img/gallery/2026-09-29-1224.jpg
     date: 2026-09-29
 
-  - src: assets/img/gallery/2026-09-29-1224.jpg
+  - src: assets/img/gallery/2026-09-29-1224-2.jpg
     date: 2026-09-29
 
   - src: assets/video/gallery/2026-09-29-1159.mp4
     poster: assets/img/gallery/2026-09-29-1159-poster.jpg
     date: 2026-09-29
 
-  - src: assets/img/gallery/2026-09-23-1414.jpg
-    date: 2026-09-23
-
-  - src: assets/img/gallery/2026-09-23-1406.jpg
-    date: 2026-09-23
-
-  - src: assets/img/gallery/2026-09-23-1404.jpg
-    date: 2026-09-23
-
   - src: assets/img/gallery/2026-09-17-1425.jpg
     date: 2026-09-17
 
   - src: assets/img/gallery/2026-09-16-1405.jpg
     date: 2026-09-16
-
-  - src: assets/img/gallery/2026-08-22-2306.jpg
-    date: 2026-08-22
 
   - src: assets/img/gallery/2026-08-16-1611.jpg
     date: 2026-08-16
@@ -58,10 +51,10 @@ photos:
   - src: assets/img/gallery/2026-06-28-1228.jpg
     date: 2026-06-28
 
-  - src: assets/img/gallery/2026-05-19-1023.jpg
-    date: 2026-05-19
-
-  - src: assets/img/gallery/2026-05-19-0302.jpg
+  # 왼쪽: 원본 게시물 / 오른쪽: 따라 찍은 사진 — 한 줄에 나란히 배치된다
+  - pair:
+      - src: assets/img/gallery/2026-05-19-0302.jpg
+      - src: assets/img/gallery/2026-05-19-1023.jpg
     date: 2026-05-19
 
   - src: assets/img/gallery/2026-05-15-2302.jpg
@@ -131,9 +124,6 @@ photos:
     poster: assets/img/gallery/2025-06-18-0000-poster.jpg
     date: 2025-06-18
 
-  - src: assets/img/gallery/2025-06-09-1607.jpg
-    date: 2025-06-09
-
   - src: assets/img/gallery/2025-03-29-2357.jpg
     date: 2025-03-29
 
@@ -189,6 +179,16 @@ photos:
 
 <div class="gallery-grid">
 {% for photo in page.photos %}
+{% if photo.pair %}
+<figure class="gallery-item gallery-pair">
+  <span class="gallery-pair-inner">
+  {% for p in photo.pair %}<img src="{{ p.src | relative_url }}" alt="{{ p.caption | default: 'Photo' }}" loading="lazy">{% endfor %}
+  </span>
+  {% if photo.caption or photo.date %}
+  <figcaption>{{ photo.caption }}{% if photo.date %}<span class="gallery-date">{{ photo.date }}</span>{% endif %}</figcaption>
+  {% endif %}
+</figure>
+{% else %}
 <figure class="gallery-item">
   {% if photo.src contains ".mp4" %}
   <video controls playsinline preload="metadata"{% if photo.poster %} poster="{{ photo.poster | relative_url }}"{% endif %}>
@@ -201,5 +201,6 @@ photos:
   <figcaption>{{ photo.caption }}{% if photo.date %}<span class="gallery-date">{{ photo.date }}</span>{% endif %}</figcaption>
   {% endif %}
 </figure>
+{% endif %}
 {% endfor %}
 </div>
