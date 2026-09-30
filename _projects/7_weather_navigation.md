@@ -24,7 +24,7 @@ Built a C navigation tool that estimates when a driver will reach each point on 
 </figure>
 </div>
 <div class="media-text" markdown="1">
-Every navigation app answers the wrong question about weather. It shows the forecast where you are now, or where you are going — as a single snapshot taken at departure.
+Every navigation app answers the wrong question about weather. It shows the forecast where you are now, or where you are going, as a single snapshot taken at departure.
 
 What actually matters on a long drive is different: the rain you will meet at the mountain pass two hours from now. That is a query indexed by _position and time together_, and no consumer app joins the two.
 
@@ -38,7 +38,7 @@ The gap is sharpest for anyone whose vehicle has no roof, which is where the ide
 <div class="media-col">
 <figure>
   <img src="{{ '/assets/img/nav_architecture.jpg' | relative_url }}" alt="Three data sources combined by a C program into a browser map">
-  <figcaption>Three public feeds — KMA forecasts, Kakao Navi, Kakao Maps — joined in C and emitted as a browser map.</figcaption>
+  <figcaption>Three public feeds (KMA forecasts, Kakao Navi, Kakao Maps) joined in C and emitted as a browser map.</figcaption>
 </figure>
 <figure>
   <img src="{{ '/assets/img/nav_dataflow.jpg' | relative_url }}" alt="Module-level data flow between main.c and the API headers">
@@ -54,8 +54,8 @@ input                                     and travel time     per-time forecast 
 
 - **Geocoding.** `Kakao_local.h` turns the typed origin and destination into coordinates.
 - **Route.** `Kakao_mobility.h` returns the route geometry and travel time.
-- **Arrival-time estimation.** Travel time is distributed along the route by distance ratio and linearly interpolated, so any point on the path gets an estimated arrival time — if 10 km takes 100 minutes, the 3 km mark is reached at roughly 30 minutes.
-- **Route compression and sampling.** The raw route carries far more vertices than the forecast grid can resolve, so the path is compressed and sampled every 5 km — enough to catch a weather front, few enough to stay inside API limits.
+- **Arrival-time estimation.** Travel time is distributed along the route by distance ratio and linearly interpolated, so any point on the path gets an estimated arrival time. If 10 km takes 100 minutes, the 3 km mark is reached at roughly 30 minutes.
+- **Route compression and sampling.** The raw route carries far more vertices than the forecast grid can resolve, so the path is compressed and sampled every 5 km: enough to catch a weather front, few enough to stay inside API limits.
 </div>
 </div>
 
@@ -68,7 +68,7 @@ input                                     and travel time     per-time forecast 
 </div>
 <div class="media-text" markdown="1">
 - **Coordinate conversion.** Each sample point is converted from WGS84 to the agency's grid before querying, since the forecast is indexed by grid cell rather than by coordinate.
-- **Forecast matching.** `Kma_ultra.h` requests the hourly forecast for each grid cell and picks the hour matching that point's estimated arrival time — not the hour of departure.
+- **Forecast matching.** `Kma_ultra.h` requests the hourly forecast for each grid cell and picks the hour matching that point's estimated arrival time, not the hour of departure.
 - **Output.** The result is written as an interactive HTML map with the per-waypoint forecast attached.
 </div>
 </div>
@@ -98,7 +98,7 @@ input                                     and travel time     per-time forecast 
 
 ## Impacts
 
-- The whole project is a data-integration problem wearing a navigation costume — extracting, parsing and reconciling two raw external feeds with different coordinate systems and different time resolutions is the part that transfers to research work.
+- The whole project is a data-integration problem wearing a navigation costume. Extracting, parsing and reconciling two raw external feeds with different coordinate systems and different time resolutions is the part that transfers to research work.
 - Written in C without the convenience of a data-frame library, which forced the parsing and memory handling to be explicit.
 
 ## Skills

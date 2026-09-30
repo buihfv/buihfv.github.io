@@ -18,7 +18,7 @@ A Bash resource monitor reporting per-GPU utilization and per-user job allocatio
 
 The group's calculations run on servers, one of them a shared external GPU server with no scheduler in front of it. That left two blind spots at opposite ends of a job's life.
 
-Before submitting, there was no way to see whether the GPUs were already saturated or by whom — `nvidia-smi` reports processes, not people, so a PID told you nothing about whose calculation it belonged to. Members submitted into a full machine, everyone's jobs slowed down, and the cause was invisible.
+Before submitting, there was no way to see whether the GPUs were already saturated or by whom. `nvidia-smi` reports processes, not people, so a PID told you nothing about whose calculation it belonged to. Members submitted into a full machine, everyone's jobs slowed down, and the cause was invisible.
 
 After a run, the outcome sat in a directory nobody was watching. A job that had died at step three looked exactly like one still working, and a converged result months later carried no record of the settings that produced it.
 
@@ -36,9 +36,9 @@ After a run, the outcome sat in a directory nobody was watching. A job that had 
 </figure>
 </div>
 <div class="media-text" markdown="1">
-**`resource_status` — turning PIDs into people.** For each compute process the script resolves `/proc/<pid>/cwd`, extracts the owning user from the path, and groups every allocation by user and by calculation directory. The output is per-GPU utilization and free memory with an OK/insufficient flag against a 15 GB threshold, then a per-user breakdown showing which GPUs each calculation holds.
+**`resource_status`: turning PIDs into people.** For each compute process the script resolves `/proc/<pid>/cwd`, extracts the owning user from the path, and groups every allocation by user and by calculation directory. The output is per-GPU utilization and free memory with an OK/insufficient flag against a 15 GB threshold, then a per-user breakdown showing which GPUs each calculation holds.
 
-The script also covers CPU occupancy, and prints the safe way to stop a job — identify the parent PID through `/proc/<pid>/cmd` and kill that, never a pattern match, which on a shared machine would take down other people's runs along with your own. (I killed everyone's calculations...It was my big mistake in 2026)
+The script also covers CPU occupancy, and prints the safe way to stop a job: identify the parent PID through `/proc/<pid>/cmd` and kill that, never a pattern match, which on a shared machine would take down other people's runs along with your own. (I killed everyone's calculations...It was my big mistake in 2026)
 </div>
 </div>
 
@@ -50,11 +50,11 @@ The script also covers CPU occupancy, and prints the safe way to stop a job — 
 </figure>
 </div>
 <div class="media-text" markdown="1">
-**`gpu_submit` / `cpu_submit` — refusing a bad submission.** The launchers pick free GPUs automatically (or accept an explicit `-gpu 3 4` list), reconcile the requested rank count with the number of GPUs actually assigned, handle the `CUDA_VISIBLE_DEVICES` mapping, and invoke the right VASP binary — `vasp_std`, `vasp_gam` or `vasp_ncl`. A submission that would collide with a running job is flagged before it starts rather than discovered afterwards.
+**`gpu_submit` / `cpu_submit`: refusing a bad submission.** The launchers pick free GPUs automatically (or accept an explicit `-gpu 3 4` list), reconcile the requested rank count with the number of GPUs actually assigned, handle the `CUDA_VISIBLE_DEVICES` mapping, and invoke the right VASP binary (`vasp_std`, `vasp_gam` or `vasp_ncl`). A submission that would collide with a running job is flagged before it starts rather than discovered afterwards.
 </div>
 </div>
 
-**`vasp_notify.sh` — reading the outcome out of OUTCAR.** Parses convergence (`reached required accuracy`), clean versus abnormal termination, elapsed time, ionic steps completed against `NSW`, and the final maximum force computed directly from the `TOTAL-FORCE` table — so it works regardless of `IBRION` — alongside the settings from `INCAR` and `KPOINTS`. Results go to a Google Sheets log via Apps Script and a Telegram message for the immediate alert.
+**`vasp_notify.sh`: reading the outcome out of OUTCAR.** Parses convergence (`reached required accuracy`), clean versus abnormal termination, elapsed time, ionic steps completed against `NSW`, and the final maximum force computed directly from the `TOTAL-FORCE` table, so it works regardless of `IBRION`, alongside the settings from `INCAR` and `KPOINTS`. Results go to a Google Sheets log via Apps Script and a Telegram message for the immediate alert.
 
 ## Results & visualization
 
@@ -74,7 +74,7 @@ The script also covers CPU occupancy, and prints the safe way to stop a job — 
 
 ## Impacts
 
-- The launchers are in routine use by the group, not just by me — the monitoring gap they fill was a shared one.
+- The launchers are in routine use by the group, not just by me. The monitoring gap they fill was a shared one.
 - Failed runs surface in minutes instead of at the next login, which is the difference between re-queuing the same day and losing one.
 - Every logged calculation keeps its own parameters, so a result stays reproducible after the working directory has been forgotten.
 

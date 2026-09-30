@@ -16,8 +16,6 @@ category: work
   <figcaption>Amorphous ZnON model, built by reproducing the sputtering process computationally.</figcaption>
 </figure>
 
-<!-- 아래 두 장은 trap 국재화 결과를 그대로 보여주는 그림이라 일단 숨겨뒀다.
-     논문 제출 후에 이 줄과 맨 아래 닫는 주석 표시만 지우면 바로 나온다.
 <figure>
   <img src="{{ '/assets/img/res_znon_hole.jpg' | relative_url }}" alt="Hole localization">
   <figcaption>Hole localization (+1e).</figcaption>
@@ -26,7 +24,6 @@ category: work
   <img src="{{ '/assets/img/res_znon_electron.jpg' | relative_url }}" alt="Electron localization">
   <figcaption>Electron localization (−1e).</figcaption>
 </figure>
--->
 </div>
 <div class="media-text" markdown="1">
 Amorphous zinc oxynitride (ZnON) is a high-mobility channel material for thin-film transistors, but under illumination of a particular wavelength and intensity it shows negative photoconductivity: the current goes _down_ rather than up. That inverts the intuition every photoconductor is built on, and without a mechanism there is no way to know whether it is a defect to engineer out or a property to exploit.

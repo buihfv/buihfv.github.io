@@ -8,11 +8,11 @@ category: work
 related_publications: false
 ---
 
-**March 2026 – June 2026** · Manufacturing Process — top 5 report, selected for class presentation
+**March 2026 – June 2026** · Manufacturing Process · Top 5 report, selected for class presentation
 
 ## Overview
 
-Investigated area-selective ALD as a bottom-up alternative to top-down etching, where edge placement errors limit 3D transistor patterning, and proposed VASP-based pre-screening of substrate–inhibitor pairs to cut experimental time and cost — demonstrated with acetylacetone (Hacac), which adsorbs on Al₂O₃ but not on SiO₂ for hydroxylated slabs.
+Investigated area-selective ALD as a bottom-up alternative to top-down etching, where edge placement errors limit 3D transistor patterning, and proposed VASP-based pre-screening of substrate–inhibitor pairs to cut experimental time and cost. The approach is demonstrated with acetylacetone (Hacac), which adsorbs on Al₂O₃ but not on SiO₂ for hydroxylated slabs.
 
 ## Motivation
 
@@ -24,7 +24,7 @@ Investigated area-selective ALD as a bottom-up alternative to top-down etching, 
 </figure>
 </div>
 <div class="media-text" markdown="1">
-As transistors moved from planar to FinFET to GAAFET, the dielectric has to coat every face of a narrow three-dimensional channel to a thickness of one to five nanometres. PVD cannot reach a sidewall — it deposits line-of-sight, so step coverage degrades exactly where the structure is tallest and the fill voids. CVD reaches further but needs temperatures above 700 °C and damages the device.
+As transistors moved from planar to FinFET to GAAFET, the dielectric has to coat every face of a narrow three-dimensional channel to a thickness of one to five nanometres. PVD cannot reach a sidewall. It deposits line-of-sight, so step coverage degrades exactly where the structure is tallest and the fill voids. CVD reaches further but needs temperatures above 700 °C and damages the device.
 </div>
 </div>
 
@@ -42,7 +42,7 @@ As transistors moved from planar to FinFET to GAAFET, the dielectric has to coat
 <div class="media-text" markdown="1">
 ALD solves both. Each half-cycle is a self-limiting surface reaction: the precursor saturates the surface and then stops, so thickness is set by the number of cycles rather than by flux, and coverage is perfect on any geometry the gas can reach.
 
-What ALD does not solve is patterning. It deposits everywhere, so anything unwanted has to be etched away afterwards — and on a complex 3D structure that etch is where edge placement error creeps in. In the comparison it is the one row where ALD is still top-down.
+What ALD does not solve is patterning. It deposits everywhere, so anything unwanted has to be etched away afterwards, and on a complex 3D structure that etch is where edge placement error creeps in. In the comparison it is the one row where ALD is still top-down.
 </div>
 </div>
 
@@ -50,7 +50,7 @@ What ALD does not solve is patterning. It deposits everywhere, so anything unwan
 <div class="media-col">
 <figure>
   <img src="{{ '/assets/img/ald_inhibitor_blocking.jpg' | relative_url }}" alt="Inhibitor blocking by SAM, SMI and polymer">
-  <figcaption>An inhibitor — SAM, small-molecule, or polymer — pre-coats the region that must stay bare.</figcaption>
+  <figcaption>An inhibitor (SAM, small-molecule, or polymer) pre-coats the region that must stay bare.</figcaption>
 </figure>
 <figure>
   <img src="{{ '/assets/img/ald_selectivity_cube.jpg' | relative_url }}" alt="Selectivity cube of precursor, inhibitor and substrate combinations">
@@ -110,8 +110,8 @@ I built hydroxylated Al₂O₃ and SiO₂ slabs, placed acetylacetone on each, a
 
 | Surface              | E<sub>ads</sub> of Hacac | Meaning                                                  |
 | -------------------- | ------------------------ | -------------------------------------------------------- |
-| SiO₂ (hydroxylated)  | **+0.1 eV**              | inhibitor does not adsorb — precursor is free to deposit |
-| Al₂O₃ (hydroxylated) | **−2.3 eV**              | inhibitor binds strongly — precursor is blocked          |
+| SiO₂ (hydroxylated)  | **+0.1 eV**              | inhibitor does not adsorb, precursor is free to deposit |
+| Al₂O₃ (hydroxylated) | **−2.3 eV**              | inhibitor binds strongly, precursor is blocked          |
 
 That is precisely the contrast area-selective ALD needs, and the mechanism behind it is acid–base. Hacac is acidic, carrying an –OH group. The SiO₂ surface is also acidic, dense with –OH: acid meeting acid gives electrostatic repulsion and a weak interaction, and the relaxed molecule stays clear of the slab. Al₂O₃ has fewer surface hydroxyls and behaves as a Lewis base, so the acidic proton of Hacac forms a strong hydrogen bond with it and the molecule locks onto the surface.
 </div>
@@ -121,7 +121,7 @@ That is precisely the contrast area-selective ALD needs, and the mechanism behin
 
 - Selectivity for this pair was established computationally, without any experiment.
 - The same two-slab calculation generalises: any substrate–inhibitor pair can be ranked this way, which turns a combinatorial experimental search into a short list.
-- Frames DFT as a process-engineering tool rather than an academic one — the screening pays for itself in chamber time.
+- Frames DFT as a process-engineering tool rather than an academic one. The screening pays for itself in chamber time.
 
 ## Skills
 

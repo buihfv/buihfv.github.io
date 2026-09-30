@@ -16,7 +16,7 @@ Developed a motion-driven robotic arm system capable of real-time teleoperation,
 
 ## Motivation
 
-A lot of experimental work is neither difficult nor interesting: the same pipetting, the same sample transfer, the same fixture adjustment, repeated until the run is done. Those steps are a poor use of a researcher's hours and a reliable source of human error, but they are also too varied to justify a purpose-built machine. A general-purpose arm a person can drive remotely — and that can later learn from those demonstrations — is the middle path.
+A lot of experimental work is neither difficult nor interesting: the same pipetting, the same sample transfer, the same fixture adjustment, repeated until the run is done. Those steps are a poor use of a researcher's hours and a reliable source of human error, but they are also too varied to justify a purpose-built machine. A general-purpose arm a person can drive remotely, and that can later learn from those demonstrations, is the middle path.
 
 ## Approach
 
@@ -37,11 +37,11 @@ A lot of experimental work is neither difficult nor interesting: the same pipett
 </div>
 
 - Real-time teleoperation working end to end.
-- TODO — a concrete number: positioning accuracy, cycle time, or how much of a given experiment it now handles.
+- TODO: a concrete number for positioning accuracy, cycle time, or how much of a given experiment it now handles.
 
 ## Impacts
 
-TODO — what it replaced, who uses it, what comes next (autonomous replay of demonstrations?).
+TODO: what it replaced, who uses it, what comes next (autonomous replay of demonstrations?).
 
 ## Skills
 

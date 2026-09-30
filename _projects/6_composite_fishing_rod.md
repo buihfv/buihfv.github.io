@@ -24,9 +24,9 @@ Showed in LS-DYNA that replacing the outermost CFRP ply of a tapered rod tube wi
 </figure>
 </div>
 <div class="media-text" markdown="1">
-A fishing rod asks more of CFRP than an aircraft part does. It needs high modulus so that casting energy transfers cleanly, and vibration damping so that a faint bite is still felt — which is why rod builders reach for higher-grade fibre than aerospace uses.
+A fishing rod asks more of CFRP than an aircraft part does. It needs high modulus so that casting energy transfers cleanly, and vibration damping so that a faint bite is still felt, which is why rod builders reach for higher-grade fibre than aerospace uses.
 
-The trade-off is that carbon fibre fails the way strong covalent bonds fail: all at once. Dislocations cannot move through an sp² graphite network, so there is no plastic deformation to absorb an impact — the rod shatters and the fragments scatter. In the hand of the person holding it, that is not only a broken rod.
+The trade-off is that carbon fibre fails the way strong covalent bonds fail: all at once. Dislocations cannot move through an sp² graphite network, so there is no plastic deformation to absorb an impact. The rod shatters and the fragments scatter. In the hand of the person holding it, that is not only a broken rod.
 </div>
 </div>
 
@@ -46,7 +46,7 @@ The trade-off is that carbon fibre fails the way strong covalent bonds fail: all
 <div class="media-text" markdown="1">
 The proposal was a hybrid layup: keep CFRP for stiffness, replace the outermost ply with aramid for toughness, and coat the aramid against the UV it is vulnerable to.
 
-- **Model.** Tapered hollow tube, `*PART_COMPOSITE` with six plies, Belytschko–Tsay shell elements for bending accuracy. The hybrid model differs from the baseline in one ply — the outermost one becomes AFRP.
+- **Model.** Tapered hollow tube, `*PART_COMPOSITE` with six plies, Belytschko–Tsay shell elements for bending accuracy. The hybrid model differs from the baseline in one ply: the outermost one becomes AFRP.
 - **Materials.** CFRP from the Toray T700S datasheet and Toray prepreg data; AFRP from DuPont's Kevlar® 49 technical guide. Failure modelled with the Chang–Chang criterion, which accounts for both fibre and matrix failure, and a 1.3× dynamic amplification factor on static strength after Jacob et al. (2004).
 - **Impact.** A rigid spherical impactor striking a fixed–fixed tube, with `*CONTACT_ERODING_SURFACE_TO_SURFACE` so that fracture and element erosion are captured rather than smeared.
 </div>
@@ -62,7 +62,7 @@ The proposal was a hybrid layup: keep CFRP for stiffness, replace the outermost 
 </figure>
 </div>
 <div class="media-text" markdown="1">
-**Impact.** The single-material CFRP rod fractured almost immediately and absorbed only a fraction of the input energy. The hybrid converted far more of that energy into plastic deformation of the aramid layer — **a 130% increase in absorbed impact energy**, taken as the area under the force–displacement curve up to failure.
+**Impact.** The single-material CFRP rod fractured almost immediately and absorbed only a fraction of the input energy. The hybrid converted far more of that energy into plastic deformation of the aramid layer, **a 130% increase in absorbed impact energy**, taken as the area under the force–displacement curve up to failure.
 </div>
 </div>
 
@@ -74,14 +74,14 @@ The proposal was a hybrid layup: keep CFRP for stiffness, replace the outermost 
     <source src="{{ '/assets/video/rod_cfrp_fracture.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video.
   </video>
-  <figcaption>CFRP baseline — brittle fragmentation.</figcaption>
+  <figcaption>CFRP baseline: brittle fragmentation.</figcaption>
 </figure>
 <figure>
   <video controls playsinline preload="metadata" muted poster="{{ '/assets/img/rod_afrp_fracture_poster.jpg' | relative_url }}">
     <source src="{{ '/assets/video/rod_afrp_fracture.mp4' | relative_url }}" type="video/mp4">
     Your browser does not support embedded video.
   </video>
-  <figcaption>AFRP hybrid — ductile deformation, tube intact.</figcaption>
+  <figcaption>AFRP hybrid: ductile deformation, tube intact.</figcaption>
 </figure>
 </div>
 <div class="media-pair" style="margin-top:0.6rem;">
@@ -98,7 +98,7 @@ The proposal was a hybrid layup: keep CFRP for stiffness, replace the outermost 
 <div class="media-text" markdown="1">
 **Fracture mode.** In the CFRP model, elements at the contact point exceeded failure strain and eroded in bulk: a crack propagated instantly, the tube fragmented, and pieces scattered.
 
-In the hybrid, elements did not erode on contact — the aramid indented and stretched, held the inner CFRP cracks from running, and kept the structure recognisably intact. The two clips are the same impact on the two layups, at the same scale and time step.
+In the hybrid, elements did not erode on contact. The aramid indented and stretched, held the inner CFRP cracks from running, and kept the structure recognisably intact. The two clips are the same impact on the two layups, at the same scale and time step.
 
 For a rod held in the hand, that is the difference between a failure and an injury.
 </div>

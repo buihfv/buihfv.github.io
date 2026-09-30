@@ -16,7 +16,7 @@ Designed a linear-rail camera slider frame using 3D CAD, built from an aluminium
 
 ## Motivation
 
-A tracking shot needs motion that is slow, even and repeatable — which is what a hand cannot do and a motor can. The course constraint was that the frame had to be machined rather than bought, so every part had to be drawn to a tolerance the shop's tools could actually hold.
+A tracking shot needs motion that is slow, even and repeatable, which is what a hand cannot do and a motor can. The course constraint was that the frame had to be machined rather than bought, so every part had to be drawn to a tolerance the shop's tools could actually hold.
 
 ## Approach
 
@@ -28,7 +28,7 @@ A tracking shot needs motion that is slow, even and repeatable — which is what
 </figure>
 </div>
 <div class="media-text" markdown="1">
-**Frame.** The slider was modelled in 3D CAD and then broken down into parts that could be produced on the machines available — each one drawn with dimensions and tolerances before anything was cut. The rail, carriage and end blocks were machined from aluminium stock and joined with bolts, so a part could be remade and swapped without rebuilding the assembly.
+**Frame.** The slider was modelled in 3D CAD and then broken down into parts that could be produced on the machines available, each one drawn with dimensions and tolerances before anything was cut. The rail, carriage and end blocks were machined from aluminium stock and joined with bolts, so a part could be remade and swapped without rebuilding the assembly.
 </div>
 </div>
 
@@ -46,7 +46,7 @@ A tracking shot needs motion that is slow, even and repeatable — which is what
 <div class="media-text" markdown="1">
 **Drive.** A lead screw driven by a stepper motor carries the camera stage along two linear rails. The screw was chosen over a belt because a tracking pass has to be repeatable: the stage returns to the same place for the same step count, and there is no belt stretch to drift over a long take.
 
-**Control.** An Arduino drives the motor through a stepper driver, regulating speed, direction and reciprocating motion, so a pass can be repeated identically — the same traverse at the same rate, as many times as a shot needs.
+**Control.** An Arduino drives the motor through a stepper driver, regulating speed, direction and reciprocating motion, so a pass can be repeated identically: the same traverse at the same rate, as many times as a shot needs.
 </div>
 </div>
 
@@ -83,7 +83,7 @@ The finished slider runs a full traverse under Arduino control and reverses at t
 </figure>
 </div>
 
-TODO — travel length, payload capacity, traverse speed, or repeatability if any of these were measured.
+TODO: travel length, payload capacity, traverse speed, or repeatability if any of these were measured.
 </div>
 </div>
 

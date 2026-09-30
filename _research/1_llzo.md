@@ -21,9 +21,9 @@ category: work
 </figure>
 </div>
 <div class="media-text" markdown="1">
-A thermal battery is asked to do two things that pull against each other. It must sit inert through a dormant storage period measured in years, and then, once activated, operate stably at several hundred degrees. Both requirements land on the solid electrolyte — and, more precisely, on its two interfaces.
+A thermal battery is asked to do two things that pull against each other. It must sit inert through a dormant storage period measured in years, and then, once activated, operate stably at several hundred degrees. Both requirements land on the solid electrolyte, and more precisely on its two interfaces.
 
-The cell under study is built as **Li₁₃Si₄ | doped LLZO | FeF₃**. Garnet Li₇La₃Zr₂O₁₂ is the standard electrolyte choice, but the dopant that stabilises one interface does not necessarily stabilise the other, and the dopants that buy thermodynamic stability tend to cost ionic mobility.
+The cell under study is **Li₁₃Si₄ | Doped LLZO | FeF₃**.
 
 I am evaluating Al-, Ga-, Ta- and Sr+Ta-doped LLZO at both the Li₁₃Si₄ anode and the FeF₃ cathode under the high-temperature conditions the cell actually operates at, along two axes at once: interfacial thermodynamic stability, and Li-ion conductivity across the interface.
 </div>

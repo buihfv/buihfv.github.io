@@ -66,7 +66,7 @@ nav_order: 4
 {% if linked %}<a class="cv-link" href="{{ linked.url | relative_url }}">{{ heading }}<span class="cv-link-arrow" aria-hidden="true">&#8599;</span></a>
 {% elsif e.url %}<a href="{{ e.url }}" target="_blank" rel="noopener noreferrer">{{ heading }}</a>
 {% else %}{{ heading }}{% endif %}
-{% if e.area %}<span class="cv-area">— {{ e.area }}</span>{% endif %}
+{% if e.area %}<span class="cv-area">· {{ e.area }}</span>{% endif %}
 </p>
 {% if org %}<p class="cv-org">{{ org }}{% if e.location %} · {{ e.location }}{% endif %}</p>{% elsif e.location %}<p class="cv-org">{{ e.location }}</p>{% endif %}
 {% if e.score %}<p class="cv-score">{{ e.score }}</p>{% endif %}
