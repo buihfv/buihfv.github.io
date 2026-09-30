@@ -2,8 +2,8 @@
 layout: page
 permalink: /gallery/
 title: Gallery
-nav: true
-nav_order: 5
+nav: false
+published: false   # 페이지 비활성 — 사이트에 안 나옴
 description: Things I make, ride and photograph when I am not in front of a terminal.
 # ===========================================================================
 # 항목 추가하는 법

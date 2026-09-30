@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Thermodynamic Stability of Doped LLZO Solid-Electrolyte Interfaces
-description: Which dopant lets a garnet electrolyte survive both electrodes at 500 °C?
-img: assets/img/fig_llzo_1.jpg
+description: Which dopant lets an LLZO electrolyte hold stable interfaces against both electrodes?
+img: assets/img/thumb_llzo.jpg
 importance: 1
 category: work
 ---
@@ -12,37 +12,21 @@ category: work
 <div class="media-row media-wide">
 <div class="media-col">
 <figure>
-  <img src="{{ '/assets/img/fig_llzo_1.jpg' | relative_url }}" alt="LLZO interface model">
-  <figcaption>Coherent LLZO / Li₁₃Si₄ interface model.</figcaption>
+  <img src="{{ '/assets/img/res_llzo_lisi.jpg' | relative_url }}" alt="Li13Si4 and doped LLZO interface model">
+  <figcaption>Li₁₃Si₄ | doped LLZO anode-side interface model.</figcaption>
 </figure>
 <figure>
-  <img src="{{ '/assets/img/fig_llzo_2.jpg' | relative_url }}" alt="Dopant configurations">
-  <figcaption>Al, Ga, Ta and Sr+Ta substitution sites in the garnet lattice.</figcaption>
+  <img src="{{ '/assets/img/res_llzo_fef3.jpg' | relative_url }}" alt="Doped LLZO and FeF3 interface model">
+  <figcaption>Doped LLZO | FeF₃ cathode-side interface model.</figcaption>
 </figure>
 </div>
 <div class="media-text" markdown="1">
-A thermal battery asks its solid electrolyte to hold up against a lithium–silicon anode on one side and an FeF₃ conversion cathode on the other, at 500 °C. Doped Li₇La₃Zr₂O₁₂ (LLZO) is the standard answer, but the dopants that buy thermodynamic stability tend to cost ionic mobility — Ta is the textbook case — and the two electrodes do not necessarily want the same dopant.
+A thermal battery is asked to do two things that pull against each other. It must sit inert through a dormant storage period measured in years, and then, once activated, operate stably at several hundred degrees. Both requirements land on the solid electrolyte — and, more precisely, on its two interfaces.
 
-I am evaluating Al-, Ga-, Ta- and Sr+Ta-doped LLZO against pristine LLZO at both interfaces, using DFT for interfacial phase stability and NEB-derived migration barriers for Li-ion transport under realistic operating conditions.
-</div>
-</div>
+The cell under study is built as **Li₁₃Si₄ | doped LLZO | FeF₃**. Garnet Li₇La₃Zr₂O₁₂ is the standard electrolyte choice, but the dopant that stabilises one interface does not necessarily stabilise the other, and the dopants that buy thermodynamic stability tend to cost ionic mobility.
 
-<div class="media-row media-wide">
-<div class="media-col">
-<figure>
-  <img src="{{ '/assets/img/fig_llzo_3.jpg' | relative_url }}" alt="NEB migration path">
-  <figcaption>NEB migration path for a Li ion across the interface.</figcaption>
-</figure>
-<figure>
-  <img src="{{ '/assets/img/fig_llzo_4.jpg' | relative_url }}" alt="Interfacial reaction energies">
-  <figcaption>Interfacial reaction energies by dopant.</figcaption>
-</figure>
-</div>
-<div class="media-text" markdown="1">
-Building the FeF₃ side meant working through the practical failure modes of coherent interface construction — a ~350-atom cell at ~8.5% lattice mismatch, with unphysically short F–Fe contacts and vacuum-layer artifacts to diagnose before anything would relax.
-
-The Sr+Ta co-doped composition is the case the work turns on: whether a second, larger dopant recovers the mobility that Ta alone gives up, which is what an experimental collaborator's results suggest.
+I am evaluating Al-, Ga-, Ta- and Sr+Ta-doped LLZO at both the Li₁₃Si₄ anode and the FeF₃ cathode under the high-temperature conditions the cell actually operates at, along two axes at once: interfacial thermodynamic stability, and Li-ion conductivity across the interface.
 </div>
 </div>
 
-<p class="research-keywords"><strong>Keywords</strong> &nbsp;LLZO · dopant engineering · interfacial phase stability · NEB · thermal batteries</p>
+<p class="research-keywords"><strong>Keywords</strong> &nbsp;LLZO · dopant engineering · interfacial stability · Li-ion conductivity · thermal batteries</p>

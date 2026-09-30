@@ -4,6 +4,7 @@ title: Machine-Learned Potentials for Affordable Interface Screening
 description: Can a trained potential make a months-long screening campaign a few days of MD?
 img: assets/img/fig_mlip_1.jpg
 importance: 4
+published: false   # 비활성 — Research 목록에 안 나옴
 category: work
 ---
 
